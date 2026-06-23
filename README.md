@@ -36,7 +36,7 @@ The original N64 completion set, all itemized and metered:
 - **Missables, thoroughly flagged in place** — every time-sensitive, order-sensitive
   or child-only pickup carries a ⚠ note (Scarecrow's Song setup, plant-the-beans spots,
   night-only tokens, Dampé's random dig, the Biggoron timed legs, child-only dungeons,
-  the final 100% audit). 24 sections are flagged. Use the **only-missable filter** to
+  the final 100% audit). 29 sections are flagged. Use the **only-missable filter** to
   review them all at a glance.
 - **"Up next" banner** points at the first incomplete step and jumps you to it.
 - **Launch countdown** — set your midnight drop datetime; it ticks down.
