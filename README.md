@@ -31,8 +31,9 @@ The original N64 completion set, all itemized and metered:
   Heart Pieces, etc. are flagged in place).
 - **"Up next" banner** points at the first incomplete step and jumps you to it.
 - **Heart Pieces / songs / key items** = checkboxes (locations are fixed & known).
-- **Gold Skulltulas** = per-area **+/- tallies** rolling up into a master 0/100
-  meter. The in-game Gold Skulltula count is the source of truth.
+- **Gold Skulltulas** = all 100 individually itemized with the canonical
+  **#1–#100** numbering, each its own checkbox with an exact location/method,
+  grouped by region. The in-game Gold Skulltula count is still the final word.
 - **Launch countdown** — set your midnight drop datetime; it ticks down.
 - Filters: hide completed, only-missable, search. Export / import / reset.
 
@@ -40,13 +41,11 @@ The original N64 completion set, all itemized and metered:
 
 `data/route.json` tags every item:
 
-- **high** — structure, songs, dungeon order, key items, medallions/stones, trade
-  chains, **and all 36 Heart Pieces** (exact location + method, sourced from the
-  Thonky checklist), **plus every per-area Gold Skulltula count** (cross-checked to
-  sum to 100).
-- **verify** — the exact per-token *spot within an area* for Gold Skulltulas (they
-  stay grouped as area tallies). **Trust the in-game Skulltula counter as the source
-  of truth.**
+- **high** — essentially everything: structure, songs, dungeon order, key items,
+  medallions/stones, trade chains, **all 36 Heart Pieces** (exact location + method),
+  **and all 100 Gold Skulltulas** (canonical #1–#100, each with its own location).
+- **verify** — only minor details to confirm in-game. **The in-game Gold Skulltula
+  counter remains the ultimate source of truth.**
 
 > Built pre-release on the **original N64** baseline. On launch night, patch in any
 > remake-specific additions/moves (new collectibles, reordered items) — the data is
@@ -55,11 +54,10 @@ The original N64 completion set, all itemized and metered:
 ### Data hardening — done
 
 Heart Pieces corrected from a wrong 24 to the real **36** with exact
-locations/methods, and Gold Skulltula per-area counts sourced and reconciled to
-100 with sub-area breakdowns in each step. Sources: thonky.com (Pieces of Heart +
-Gold Skulltula guides), cross-checked against Zelda Dungeon / jegged. A future pass
-could split the area tallies into 100 individually-named token checkboxes — the
-framework already supports it.
+locations/methods, and all **100 Gold Skulltulas individually itemized** with the
+canonical #1–#100 numbering and a location/method for each (grouped by region).
+Every number 1–100 is validated present exactly once. Sources: thonky.com (Pieces
+of Heart) and jegged.com (Gold Skulltula #1–100), cross-checked.
 
 ## Run it
 
