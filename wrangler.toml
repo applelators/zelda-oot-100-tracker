@@ -1,0 +1,14 @@
+name = "zelda-oot-100-tracker"
+main = "worker.js"
+compatibility_date = "2025-06-01"
+
+# Static SPA lives in ./public and is served via the ASSETS binding.
+# (Worker runs only for non-asset routes — leaves room for a future /api/* sync layer.)
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# Deploy to the applelators Cloudflare account:
+#   wrangler deploy
+# Local preview:
+#   wrangler dev      (or, with no wrangler installed: `python3 -m http.server` inside ./public)

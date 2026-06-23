@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "game": "The Legend of Zelda: Ocarina of Time (N64 100% definition)",
+    "subtitle": "Switch 2 remake — midnight-launch one-sitting 100% binge route",
+    "version": "0.1.0",
+    "scope": "Single-playthrough, glitchless, missable-safe linear route to community 100%: 24 Heart Pieces, 100 Gold Skulltulas, 12 songs, all equipment / items / capacity upgrades, 4 bottles, both trade sequences (Biggoron's Sword + Happy Mask), all 6 Great Fairy upgrades, 3 Spiritual Stones, 6 Medallions, and every dungeon.",
+    "confidencePolicy": "Structure, songs, dungeon order, key items, medallions/stones and trade chains are tagged HIGH. Heart Piece and Gold Skulltula specifics are tagged VERIFY — trust the in-game Gold Skulltula count and a HP guide over any wording here. Once the remake ships, re-check whether the remake adds/moves anything (this baseline is original N64).",
+    "remakeNote": "Built pre-release on the original N64 100% baseline. Patch in remake-specific changes on launch night.",
+    "sources": "To harden VERIFY items, do a data pass against a dedicated guide (e.g. Zelda Dungeon / zeldaspeedruns 100% route).",
+    "confidenceLegend": {
+      "high": "Cross-confirmed, fixed in the original game.",
+      "verify": "Best-known specifics; confirm in-game (esp. exact Heart Piece spots and per-area Skulltula locations)."
+    }
+  },
+  "categories": {
+    "hearts": { "label": "Heart Pieces", "icon": "♥", "primary": true },
+    "gs": { "label": "Gold Skulltulas", "icon": "🕷", "primary": true },
+    "song": { "label": "Songs", "icon": "🎵", "primary": true },
+    "sacred": { "label": "Stones & Medallions", "icon": "💎" },
+    "dungeon": { "label": "Dungeons", "icon": "🗝" },
+    "equip": { "label": "Equipment", "icon": "🛡" },
+    "item": { "label": "Items", "icon": "🏹" },
+    "upgrade": { "label": "Upgrades", "icon": "⬆" },
+    "bottle": { "label": "Bottles", "icon": "🍼" },
+    "fairy": { "label": "Great Fairies", "icon": "✨" },
+    "trade": { "label": "Trade Quests", "icon": "🔁" }
+  },
+  "phases": [
+    {
+      "id": "p01-kokiri-deku",
+      "title": "Kokiri Forest & Inside the Deku Tree",
+      "era": "child",
+      "blurb": "The opening. Grab the basics, clear the first dungeon, earn the first Spiritual Stone. Don't sprint past the forest collectibles — some Kokiri Forest Skulltulas are easiest now.",
+      "steps": [
+        { "id": "s-kokiri-sword", "title": "Get the Kokiri Sword", "loc": "Kokiri Forest (training-path hole behind the fence)", "do": "Crawl the maze behind the boulder to the chest.", "items": [ { "id": "i-kokiri-sword", "cat": "equip", "label": "Kokiri Sword", "conf": "high" } ] },
+        { "id": "s-deku-shield", "title": "Buy a Deku Shield", "loc": "Kokiri Shop (40 rupees)", "do": "Cut grass / break pots for rupees first.", "items": [ { "id": "i-deku-shield", "cat": "equip", "label": "Deku Shield", "conf": "high" } ] },
+        { "id": "s-slingshot", "title": "Inside the Deku Tree — Fairy Slingshot", "loc": "Deku Tree (basement)", "do": "Main dungeon item.", "items": [ { "id": "i-slingshot", "cat": "item", "label": "Fairy Slingshot", "conf": "high" } ] },
+        { "id": "s-gs-deku", "title": "Gold Skulltulas — Inside the Deku Tree", "loc": "Deku Tree", "do": "Skulltula tokens on/behind webs and vines.", "missable": false, "items": [ { "id": "gs-deku", "cat": "gs", "type": "tally", "count": 3, "label": "Gold Skulltulas here", "conf": "verify" } ] },
+        { "id": "s-deku-clear", "title": "Defeat Queen Gohma — Kokiri's Emerald", "loc": "Deku Tree (boss)", "do": "First Spiritual Stone; clears the dungeon.", "items": [ { "id": "d-deku", "cat": "dungeon", "label": "Inside the Deku Tree (cleared)", "conf": "high" }, { "id": "st-emerald", "cat": "sacred", "label": "Kokiri's Emerald", "conf": "high" } ] },
+        { "id": "s-gs-kokiri", "title": "Gold Skulltulas — Kokiri Forest", "loc": "Kokiri Forest", "do": "Night-time tokens: on the Know-It-All house, behind Mido's house, etc. (some need night / a few are adult-only — grab child-reachable now).", "items": [ { "id": "gs-kokiri", "cat": "gs", "type": "tally", "count": 3, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p02-lost-woods",
+      "title": "Lost Woods, Saria's Song & Forest detours",
+      "era": "child",
+      "blurb": "Pick up Saria's Song, the Lost Woods minigames, and forest Heart Pieces / upgrades on your way out.",
+      "steps": [
+        { "id": "s-sarias-song", "title": "Learn Saria's Song", "loc": "Sacred Forest Meadow (Saria)", "do": "Navigate the Lost Woods correct-exit sequence to the Meadow.", "items": [ { "id": "song-saria", "cat": "song", "label": "Saria's Song", "conf": "high" } ] },
+        { "id": "s-skullkid-hp", "title": "Skull Kid Heart Piece", "loc": "Lost Woods (Skull Kid clearing)", "do": "Play Saria's Song / Zelda's Lullaby for the Skull Kids for a Heart Piece.", "missable": false, "items": [ { "id": "hp-skullkid", "cat": "hearts", "label": "Heart Piece — Skull Kid", "conf": "verify" } ] },
+        { "id": "s-deku-theater", "title": "Deku Theater rewards (return later with masks)", "loc": "Lost Woods (Deku Theater stage)", "do": "Show the Skull Mask → Deku Stick capacity; later the Mask of Truth → Deku Nut capacity. (Needs the mask trade — flagged so you don't forget to come back.)", "missable": false, "items": [ { "id": "up-deku-stick", "cat": "upgrade", "label": "Deku Stick capacity (Skull Mask)", "conf": "high" }, { "id": "up-deku-nut", "cat": "upgrade", "label": "Deku Nut capacity (Mask of Truth)", "conf": "high" } ] },
+        { "id": "s-gs-lostwoods", "title": "Gold Skulltulas — Lost Woods & Sacred Forest Meadow", "loc": "Lost Woods / Meadow", "items": [ { "id": "gs-lostwoods", "cat": "gs", "type": "tally", "count": 5, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p03-hyrule-field-ranch",
+      "title": "Hyrule Field & Lon Lon Ranch",
+      "era": "child",
+      "blurb": "Cross the field, meet Malon, learn Epona's Song. Field grottos hide Skulltulas and a Heart Piece.",
+      "steps": [
+        { "id": "s-epona-song", "title": "Learn Epona's Song", "loc": "Lon Lon Ranch (Malon)", "do": "Talk to Malon by the corral with the Fairy Ocarina.", "items": [ { "id": "song-epona", "cat": "song", "label": "Epona's Song", "conf": "high" } ] },
+        { "id": "s-ranch-hp", "title": "Lon Lon Ranch Heart Piece", "loc": "Ranch silo / tower", "do": "Climb the ladder inside the tower to the chest.", "missable": false, "items": [ { "id": "hp-ranch", "cat": "hearts", "label": "Heart Piece — Lon Lon tower", "conf": "verify" } ] },
+        { "id": "s-field-hp", "title": "Hyrule Field grotto Heart Piece", "loc": "Hyrule Field (open a grotto)", "do": "Bomb / Song-of-Storms a grotto for a HP and a Skulltula.", "missable": false, "items": [ { "id": "hp-field", "cat": "hearts", "label": "Heart Piece — Hyrule Field grotto", "conf": "verify" } ] },
+        { "id": "s-gs-field", "title": "Gold Skulltulas — Hyrule Field", "loc": "Hyrule Field grottos", "items": [ { "id": "gs-field", "cat": "gs", "type": "tally", "count": 5, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p04-market-castle",
+      "title": "Castle Town, Hyrule Castle & Zelda",
+      "era": "child",
+      "blurb": "Zelda's Lullaby, the start of the Happy Mask trade chain, the Treasure Chest Game Heart Piece, and the Din's Fire Great Fairy.",
+      "steps": [
+        { "id": "s-weird-egg", "title": "Start the Happy Mask trade (Weird Egg)", "loc": "Market → Castle courtyard route", "do": "Get the Weird Egg → hatches into a Cucco → wakes Talon. Trade chain begins.", "items": [ { "id": "tr-mask-start", "cat": "trade", "label": "Weird Egg → Cucco (mask chain begins)", "conf": "high" } ] },
+        { "id": "s-zeldas-lullaby", "title": "Learn Zelda's Lullaby", "loc": "Hyrule Castle courtyard (Impa, after meeting Zelda)", "do": "Sneak past guards to the courtyard.", "items": [ { "id": "song-lullaby", "cat": "song", "label": "Zelda's Lullaby", "conf": "high" }, { "id": "tr-letter", "cat": "trade", "label": "Zelda's Letter", "conf": "high" } ] },
+        { "id": "s-malon-mask", "title": "Deliver Zelda's Letter → Keaton Mask", "loc": "Lon Lon / Kakariko Mask Shop", "do": "Letter to Talon, then borrow masks from the Happy Mask Shop and sell them in order (Keaton → Spooky → Skull → Bunny Hood → Mask of Truth).", "items": [ { "id": "tr-mask-chain", "cat": "trade", "label": "Mask chain → Mask of Truth", "conf": "high" } ] },
+        { "id": "s-treasure-game-hp", "title": "Treasure Chest Game Heart Piece", "loc": "Market (night)", "do": "Win the Treasure Chest Game for a Heart Piece.", "missable": false, "items": [ { "id": "hp-chestgame", "cat": "hearts", "label": "Heart Piece — Treasure Chest Game", "conf": "verify" } ] },
+        { "id": "s-bombchu-bowling", "title": "Bombchu Bowling Heart Pieces (return when you have bombs/$)", "loc": "Market alley", "do": "Two prizes here over repeated plays: a Heart Piece and a Bomb Bag upgrade.", "items": [ { "id": "hp-bowling", "cat": "hearts", "label": "Heart Piece — Bombchu Bowling", "conf": "verify" }, { "id": "up-bombbag-bowling", "cat": "upgrade", "label": "Bomb Bag upgrade (Bowling)", "conf": "verify" } ] },
+        { "id": "s-dins-fire", "title": "Great Fairy — Din's Fire", "loc": "Hyrule Castle grotto (bomb the wall, Zelda's Lullaby)", "do": "Magic spell from the Great Fairy.", "items": [ { "id": "fairy-din", "cat": "fairy", "label": "Great Fairy — Din's Fire", "conf": "high" } ] },
+        { "id": "s-gs-market", "title": "Gold Skulltulas — Market / Castle grounds", "loc": "Market & Castle", "items": [ { "id": "gs-market", "cat": "gs", "type": "tally", "count": 3, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p05-kakariko-graveyard",
+      "title": "Kakariko Village, Graveyard & Bottom of the Well",
+      "era": "child",
+      "blurb": "Sun's Song, the Cucco bottle, Dampé's Heart Piece, and the child-only Bottom of the Well dungeon (which holds the Lens of Truth you'll need for the adult arc).",
+      "steps": [
+        { "id": "s-cucco-bottle", "title": "Bottle #1 — Cucco Lady", "loc": "Kakariko Village", "do": "Round up the 7 escaped cuccos → empty Bottle.", "items": [ { "id": "bot-cucco", "cat": "bottle", "label": "Bottle (Cucco Lady)", "conf": "high" } ] },
+        { "id": "s-suns-song", "title": "Learn Sun's Song", "loc": "Graveyard (Royal Family's Tomb, Composer Brothers' grave)", "do": "Pull the grave with bombs/strength, read the song.", "items": [ { "id": "song-sun", "cat": "song", "label": "Sun's Song", "conf": "high" } ] },
+        { "id": "s-dampe-hp", "title": "Dampé Gravedigging Heart Piece", "loc": "Graveyard (night, Dampé digging game)", "do": "Pay Dampé to dig until he turns up the Heart Piece.", "missable": false, "items": [ { "id": "hp-dampe-dig", "cat": "hearts", "label": "Heart Piece — Dampé digging", "conf": "verify" } ] },
+        { "id": "s-graveyard-hp", "title": "Graveyard climb / Shield-grave items", "loc": "Graveyard", "do": "Heart Piece atop the ledge; the back grave hides a Hylian Shield-tier chest (free Hylian Shield).", "items": [ { "id": "hp-graveyard", "cat": "hearts", "label": "Heart Piece — Graveyard ledge", "conf": "verify" }, { "id": "i-hylian-shield", "cat": "equip", "label": "Hylian Shield", "conf": "high" } ] },
+        { "id": "s-botw", "title": "Bottom of the Well — Lens of Truth", "loc": "Kakariko well (drain via Song of Storms in the windmill)", "do": "Child-only dungeon. Get the Lens of Truth (mandatory for Shadow Temple & many secrets).", "items": [ { "id": "d-botw", "cat": "dungeon", "label": "Bottom of the Well (cleared)", "conf": "high" }, { "id": "i-lens", "cat": "item", "label": "Lens of Truth", "conf": "high" } ] },
+        { "id": "s-song-storms", "title": "Learn Song of Storms", "loc": "Kakariko Windmill (Guru-Guru, with Lens/after well)", "do": "The windmill man teaches it.", "items": [ { "id": "song-storms", "cat": "song", "label": "Song of Storms", "conf": "high" } ] },
+        { "id": "s-gs-botw", "title": "Gold Skulltulas — Bottom of the Well", "loc": "Bottom of the Well", "items": [ { "id": "gs-botw", "cat": "gs", "type": "tally", "count": 5, "label": "Gold Skulltulas here", "conf": "verify" } ] },
+        { "id": "s-gs-kakariko", "title": "Gold Skulltulas — Kakariko & Graveyard", "loc": "Kakariko / Graveyard", "do": "Several here are child-only (e.g. soft-soil grottos). The Skulltula House owner upgrades your wallet as you reach 10/30 tokens.", "items": [ { "id": "gs-kakariko", "cat": "gs", "type": "tally", "count": 8, "label": "Gold Skulltulas here", "conf": "verify" } ] },
+        { "id": "s-wallets", "title": "Wallet upgrades (Skulltula House)", "loc": "House of Skulltula, Kakariko", "do": "Adult's Wallet at 10 tokens, Giant's Wallet at 30, plus more rewards at 40/50/100.", "items": [ { "id": "up-adult-wallet", "cat": "upgrade", "label": "Adult's Wallet (10 GS)", "conf": "high" }, { "id": "up-giant-wallet", "cat": "upgrade", "label": "Giant's Wallet (30 GS)", "conf": "high" }, { "id": "hp-gs50", "cat": "hearts", "label": "Heart Piece — 50 GS reward", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p06-death-mountain",
+      "title": "Death Mountain Trail, Goron City & Crater",
+      "era": "child",
+      "blurb": "Goron's Bracelet, the first Magic Meter Great Fairy, the Bomb Bag, and Goron City collectibles.",
+      "steps": [
+        { "id": "s-magic-fairy", "title": "Great Fairy — Magic Meter", "loc": "Death Mountain Trail (top, bomb the wall, Zelda's Lullaby)", "do": "Grants the magic bar.", "items": [ { "id": "fairy-magic", "cat": "fairy", "label": "Great Fairy — Magic Meter", "conf": "high" } ] },
+        { "id": "s-bomb-bag", "title": "Bomb Bag — Goron rolling game / Dodongo prep", "loc": "Goron City (stop the rolling Goron)", "do": "Goron Bracelet from Darunia (play Saria's Song); Bomb Bag from the rolling Goron minigame.", "items": [ { "id": "up-goron-bracelet", "cat": "upgrade", "label": "Goron's Bracelet (lift Bomb Flowers)", "conf": "high" }, { "id": "i-bomb-bag", "cat": "item", "label": "Bomb Bag", "conf": "high" } ] },
+        { "id": "s-dmt-hp", "title": "Death Mountain Heart Pieces", "loc": "DM Trail & Goron City", "do": "HP on the Trail (bombable wall) and HP in Goron City (light all torches / spin the pot).", "items": [ { "id": "hp-dmt", "cat": "hearts", "label": "Heart Piece — DM Trail", "conf": "verify" }, { "id": "hp-goron-city", "cat": "hearts", "label": "Heart Piece — Goron City", "conf": "verify" } ] },
+        { "id": "s-gs-dm", "title": "Gold Skulltulas — Death Mountain & Goron City", "loc": "DM Trail / Crater / Goron City", "items": [ { "id": "gs-dm", "cat": "gs", "type": "tally", "count": 8, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p07-dodongo",
+      "title": "Dodongo's Cavern",
+      "era": "child",
+      "blurb": "Second dungeon, second Spiritual Stone.",
+      "steps": [
+        { "id": "s-dodongo-clear", "title": "Defeat King Dodongo — Goron's Ruby", "loc": "Dodongo's Cavern (boss)", "do": "Bomb Bag required; earns the Goron's Ruby.", "items": [ { "id": "d-dodongo", "cat": "dungeon", "label": "Dodongo's Cavern (cleared)", "conf": "high" }, { "id": "st-ruby", "cat": "sacred", "label": "Goron's Ruby", "conf": "high" } ] },
+        { "id": "s-gs-dodongo", "title": "Gold Skulltulas — Dodongo's Cavern", "loc": "Dodongo's Cavern", "items": [ { "id": "gs-dodongo", "cat": "gs", "type": "tally", "count": 5, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p08-zora",
+      "title": "Zora's River, Domain, Fountain & Jabu-Jabu",
+      "era": "child",
+      "blurb": "Magic Beans, the Silver Scale, the Ruto's-Letter bottle, Farore's Wind, the frog Heart Pieces, then the third dungeon and final Spiritual Stone.",
+      "steps": [
+        { "id": "s-magic-beans", "title": "Buy all Magic Beans", "loc": "Zora's River (Bean Salesman)", "do": "Plant a bean at every soft-soil spot now (they grow into adult platforms for several Heart Pieces). Buying the full set counts toward 100%.", "items": [ { "id": "i-magic-beans", "cat": "item", "label": "Magic Beans (full set planted)", "conf": "high" } ] },
+        { "id": "s-frog-hp", "title": "Frog minigame Heart Pieces", "loc": "Zora's River (frogs on the logs)", "do": "Play songs for the frogs → two Heart Pieces (one for the song set, one for the bug-eating challenge).", "missable": false, "items": [ { "id": "hp-frog-1", "cat": "hearts", "label": "Heart Piece — Frogs (songs)", "conf": "verify" }, { "id": "hp-frog-2", "cat": "hearts", "label": "Heart Piece — Frogs (challenge)", "conf": "verify" } ] },
+        { "id": "s-zora-river-hp", "title": "Zora's River ledge Heart Piece", "loc": "Zora's River (high ledge / waterfall)", "do": "Reach via vines or beans.", "items": [ { "id": "hp-zora-river", "cat": "hearts", "label": "Heart Piece — Zora's River ledge", "conf": "verify" } ] },
+        { "id": "s-silver-scale", "title": "Silver Scale (diving game)", "loc": "Zora's Domain (dive for rupees)", "do": "Win King Zora's diving minigame for the Silver Scale (deeper diving).", "items": [ { "id": "up-silver-scale", "cat": "upgrade", "label": "Silver Scale", "conf": "high" } ] },
+        { "id": "s-ruto-bottle", "title": "Bottle #2 — Ruto's Letter", "loc": "Zora's Domain (King Zora gives the bottle w/ letter)", "do": "After delivering the letter the bottle is yours, empty.", "items": [ { "id": "bot-ruto", "cat": "bottle", "label": "Bottle (Ruto's Letter)", "conf": "high" } ] },
+        { "id": "s-farore", "title": "Great Fairy — Farore's Wind", "loc": "Zora's Fountain (bomb the wall, Zelda's Lullaby)", "do": "Warp/recall spell.", "items": [ { "id": "fairy-farore", "cat": "fairy", "label": "Great Fairy — Farore's Wind", "conf": "high" } ] },
+        { "id": "s-jabu-clear", "title": "Inside Jabu-Jabu's Belly — Zora's Sapphire", "loc": "Jabu-Jabu (boss: Barinade)", "do": "Boomerang dungeon; third Spiritual Stone. Get the Boomerang here.", "items": [ { "id": "i-boomerang", "cat": "item", "label": "Boomerang", "conf": "high" }, { "id": "d-jabu", "cat": "dungeon", "label": "Inside Jabu-Jabu's Belly (cleared)", "conf": "high" }, { "id": "st-sapphire", "cat": "sacred", "label": "Zora's Sapphire", "conf": "high" } ] },
+        { "id": "s-gs-zora", "title": "Gold Skulltulas — Zora areas & Jabu-Jabu", "loc": "Zora's River / Domain / Fountain / Jabu", "items": [ { "id": "gs-zora", "cat": "gs", "type": "tally", "count": 11, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p09-time-travel",
+      "title": "Song of Time & the Master Sword",
+      "era": "child",
+      "blurb": "Last child errands, then pull the Master Sword and jump 7 years forward.",
+      "steps": [
+        { "id": "s-song-time", "title": "Learn the Song of Time / get the Ocarina of Time", "loc": "Hyrule Castle (Zelda) → Temple of Time", "do": "With all 3 Spiritual Stones + Ocarina of Time, open the Door of Time.", "items": [ { "id": "song-time", "cat": "song", "label": "Song of Time", "conf": "high" }, { "id": "i-ocarina-time", "cat": "item", "label": "Ocarina of Time", "conf": "high" } ] },
+        { "id": "s-child-cleanup", "title": "FINAL child-only cleanup before pulling the sword", "loc": "everywhere", "do": "Confirm: all child-reachable Gold Skulltulas (some areas have child-only tokens), the Bottom of the Well, child Spiritual Stones, and any soft-soil beans are planted. A few collectibles are far easier as a child — sweep now.", "missable": true, "missableNote": "Some Skulltulas/secrets are child-only or much harder as an adult. Do a pass before time-travelling.", "items": [] },
+        { "id": "s-master-sword", "title": "Pull the Master Sword → become adult", "loc": "Temple of Time (Pedestal of Time)", "do": "You can travel between eras freely from here on by replacing the sword.", "items": [ { "id": "i-master-sword", "cat": "equip", "label": "Master Sword", "conf": "high" } ] }
+      ]
+    },
+    {
+      "id": "p10-adult-open",
+      "title": "Adult: Sheik, Prelude of Light & Kakariko prep",
+      "era": "adult",
+      "blurb": "The adult era opens up. Grab the warp song home base, then the Hookshot.",
+      "steps": [
+        { "id": "s-light-medallion", "title": "Light Medallion (Rauru)", "loc": "Chamber of Sages (automatic on becoming adult)", "do": "Rauru awards the Light Medallion when you first awaken as an adult.", "items": [ { "id": "md-light", "cat": "sacred", "label": "Light Medallion", "conf": "high" } ] },
+        { "id": "s-prelude", "title": "Learn Prelude of Light", "loc": "Temple of Time (Sheik)", "do": "Warp to the Temple of Time.", "items": [ { "id": "song-prelude", "cat": "song", "label": "Prelude of Light", "conf": "high" } ] },
+        { "id": "s-hookshot", "title": "Get the Hookshot", "loc": "Kakariko Graveyard (Dampé's tomb race)", "do": "Race Dampé's ghost → Hookshot. (Beat the record on a repeat run for the Graveyard Heart Piece.)", "items": [ { "id": "i-hookshot", "cat": "item", "label": "Hookshot", "conf": "high" }, { "id": "hp-dampe-race", "cat": "hearts", "label": "Heart Piece — Dampé race record", "conf": "verify" } ] },
+        { "id": "s-gs-adult-town", "title": "Gold Skulltulas — adult-only town/field spots", "loc": "Kakariko / Market ruins / Field", "do": "Hookshot opens several high tokens unreachable as a child.", "items": [ { "id": "gs-adult-town", "cat": "gs", "type": "tally", "count": 4, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p11-forest-temple",
+      "title": "Sacred Forest Meadow & Forest Temple",
+      "era": "adult",
+      "blurb": "Minuet of Forest, the Fairy Bow, and the first Medallion.",
+      "steps": [
+        { "id": "s-minuet", "title": "Learn Minuet of Forest", "loc": "Sacred Forest Meadow (Sheik)", "do": "Warp song to the Meadow.", "items": [ { "id": "song-minuet", "cat": "song", "label": "Minuet of Forest", "conf": "high" } ] },
+        { "id": "s-fairy-bow", "title": "Forest Temple — Fairy Bow", "loc": "Forest Temple", "do": "Main dungeon item.", "items": [ { "id": "i-bow", "cat": "item", "label": "Fairy Bow", "conf": "high" }, { "id": "up-quiver-30", "cat": "upgrade", "label": "Quiver (base 30 arrows)", "conf": "high" } ] },
+        { "id": "s-forest-clear", "title": "Defeat Phantom Ganon — Forest Medallion", "loc": "Forest Temple (boss)", "items": [ { "id": "d-forest", "cat": "dungeon", "label": "Forest Temple (cleared)", "conf": "high" }, { "id": "md-forest", "cat": "sacred", "label": "Forest Medallion", "conf": "high" } ] },
+        { "id": "s-gs-forest", "title": "Gold Skulltulas — Forest Temple", "loc": "Forest Temple", "items": [ { "id": "gs-forest", "cat": "gs", "type": "tally", "count": 5, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p12-fire-temple",
+      "title": "Death Mountain Crater & Fire Temple",
+      "era": "adult",
+      "blurb": "Bolero of Fire, Goron Tunic, the Megaton Hammer, the second Magic upgrade, and the Fire Medallion.",
+      "steps": [
+        { "id": "s-bolero", "title": "Learn Bolero of Fire", "loc": "Death Mountain Crater (Sheik)", "do": "Warp song; you'll want the Goron Tunic to survive the heat.", "items": [ { "id": "song-bolero", "cat": "song", "label": "Bolero of Fire", "conf": "high" } ] },
+        { "id": "s-goron-tunic", "title": "Goron Tunic", "loc": "Goron City (buy) / Link the Goron kid", "do": "Heat-proof tunic (also free from Darunia's kid).", "items": [ { "id": "i-goron-tunic", "cat": "equip", "label": "Goron Tunic", "conf": "high" } ] },
+        { "id": "s-double-magic", "title": "Great Fairy — Double Magic", "loc": "Death Mountain Crater (bomb the wall, Bolero/access)", "items": [ { "id": "fairy-magic2", "cat": "fairy", "label": "Great Fairy — Double Magic", "conf": "high" } ] },
+        { "id": "s-megaton", "title": "Fire Temple — Megaton Hammer", "loc": "Fire Temple", "items": [ { "id": "i-hammer", "cat": "item", "label": "Megaton Hammer", "conf": "high" } ] },
+        { "id": "s-fire-clear", "title": "Defeat Volvagia — Fire Medallion", "loc": "Fire Temple (boss)", "items": [ { "id": "d-fire", "cat": "dungeon", "label": "Fire Temple (cleared)", "conf": "high" }, { "id": "md-fire", "cat": "sacred", "label": "Fire Medallion", "conf": "high" } ] },
+        { "id": "s-dmc-hp", "title": "Death Mountain Crater Heart Piece", "loc": "DM Crater (Scarecrow's Song / Hover Boots ledge)", "items": [ { "id": "hp-dmc", "cat": "hearts", "label": "Heart Piece — DM Crater", "conf": "verify" } ] },
+        { "id": "s-gs-fire", "title": "Gold Skulltulas — Fire Temple", "loc": "Fire Temple", "items": [ { "id": "gs-fire", "cat": "gs", "type": "tally", "count": 5, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p13-ice-water",
+      "title": "Ice Cavern, Lake Hylia & Water Temple",
+      "era": "adult",
+      "blurb": "Iron Boots (Ice Cavern), the Zora Tunic bottle-letter is done; Serenade of Water, the Golden Scale, Longshot, and the Water Medallion. Drain the lake when you finish.",
+      "steps": [
+        { "id": "s-ice-cavern", "title": "Ice Cavern — Iron Boots", "loc": "Zora's Fountain → Ice Cavern", "do": "Mini-dungeon; Iron Boots (needed to sink in the Water Temple) and a Heart Piece.", "items": [ { "id": "i-iron-boots", "cat": "equip", "label": "Iron Boots", "conf": "high" }, { "id": "i-zora-tunic", "cat": "equip", "label": "Zora Tunic (King Zora, post-thaw)", "conf": "high" }, { "id": "hp-ice", "cat": "hearts", "label": "Heart Piece — Ice Cavern", "conf": "verify" }, { "id": "d-ice", "cat": "dungeon", "label": "Ice Cavern (cleared)", "conf": "high" } ] },
+        { "id": "s-serenade", "title": "Learn Serenade of Water", "loc": "Lake Hylia (Sheik)", "items": [ { "id": "song-serenade", "cat": "song", "label": "Serenade of Water", "conf": "high" } ] },
+        { "id": "s-golden-scale", "title": "Golden Scale (Fishing Pond)", "loc": "Lake Hylia Fishing Pond", "do": "Catch a big fish (record) for the Golden Scale; the pond also hides a Heart Piece.", "items": [ { "id": "up-golden-scale", "cat": "upgrade", "label": "Golden Scale", "conf": "high" }, { "id": "hp-fishing", "cat": "hearts", "label": "Heart Piece — Fishing Pond", "conf": "verify" } ] },
+        { "id": "s-lake-hp", "title": "Lake Hylia Heart Pieces (child dive + adult)", "loc": "Lake Hylia", "do": "Child: dive under the lab with the Silver Scale. Adult: the lab's diving record (Golden Scale).", "items": [ { "id": "hp-lake-dive", "cat": "hearts", "label": "Heart Piece — Lake dive", "conf": "verify" } ] },
+        { "id": "s-longshot", "title": "Water Temple — Longshot", "loc": "Water Temple", "do": "Upgrades the Hookshot.", "items": [ { "id": "i-longshot", "cat": "item", "label": "Longshot", "conf": "high" } ] },
+        { "id": "s-water-clear", "title": "Defeat Morpha — Water Medallion", "loc": "Water Temple (boss)", "items": [ { "id": "d-water", "cat": "dungeon", "label": "Water Temple (cleared)", "conf": "high" }, { "id": "md-water", "cat": "sacred", "label": "Water Medallion", "conf": "high" } ] },
+        { "id": "s-gs-ice", "title": "Gold Skulltulas — Ice Cavern", "loc": "Ice Cavern", "items": [ { "id": "gs-ice", "cat": "gs", "type": "tally", "count": 3, "label": "Gold Skulltulas here", "conf": "verify" } ] },
+        { "id": "s-gs-water", "title": "Gold Skulltulas — Water Temple & Lake Hylia", "loc": "Water Temple / Lake Hylia", "items": [ { "id": "gs-water", "cat": "gs", "type": "tally", "count": 8, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p14-shadow",
+      "title": "Kakariko fire, Nocturne of Shadow & Shadow Temple",
+      "era": "adult",
+      "blurb": "Hover Boots, Nocturne of Shadow, the Shadow Medallion. You need the Lens of Truth (grabbed back in the Well) and Hover Boots here.",
+      "steps": [
+        { "id": "s-nocturne", "title": "Learn Nocturne of Shadow", "loc": "Kakariko Graveyard (Sheik, after Forest+Fire+Water)", "items": [ { "id": "song-nocturne", "cat": "song", "label": "Nocturne of Shadow", "conf": "high" } ] },
+        { "id": "s-hover-boots", "title": "Shadow Temple — Hover Boots", "loc": "Shadow Temple", "do": "Hover Boots are the dungeon item (cross gaps / hover).", "items": [ { "id": "i-hover-boots", "cat": "equip", "label": "Hover Boots", "conf": "high" } ] },
+        { "id": "s-shadow-clear", "title": "Defeat Bongo Bongo — Shadow Medallion", "loc": "Shadow Temple (boss)", "items": [ { "id": "d-shadow", "cat": "dungeon", "label": "Shadow Temple (cleared)", "conf": "high" }, { "id": "md-shadow", "cat": "sacred", "label": "Shadow Medallion", "conf": "high" } ] },
+        { "id": "s-windmill-hp", "title": "Kakariko adult Heart Pieces", "loc": "Kakariko (rooftops / windmill / potion shop ledge)", "items": [ { "id": "hp-kakariko-roof", "cat": "hearts", "label": "Heart Piece — Kakariko rooftop", "conf": "verify" } ] },
+        { "id": "s-gs-shadow", "title": "Gold Skulltulas — Shadow Temple", "loc": "Shadow Temple", "items": [ { "id": "gs-shadow", "cat": "gs", "type": "tally", "count": 5, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p15-gerudo",
+      "title": "Gerudo Valley, Fortress, Wasteland & Spirit Temple",
+      "era": "adult+child",
+      "blurb": "Free the carpenters, get the Gerudo card + horseback archery, Requiem of Spirit, Mirror Shield, Silver Gauntlets (child) and the Spirit Medallion. The Spirit Temple needs both eras.",
+      "steps": [
+        { "id": "s-gerudo-card", "title": "Free the carpenters → Gerudo Membership Card", "loc": "Gerudo's Fortress", "do": "Sneak/fight to free the 4 carpenters; the card opens the Training Ground & Wasteland.", "items": [ { "id": "i-gerudo-card", "cat": "item", "label": "Gerudo Membership Card", "conf": "high" } ] },
+        { "id": "s-horseback", "title": "Horseback Archery → Quiver + Heart Piece", "loc": "Gerudo's Fortress (on Epona)", "do": "1000 pts → Heart Piece, 1500 pts → bigger Quiver.", "items": [ { "id": "hp-archery", "cat": "hearts", "label": "Heart Piece — Horseback Archery", "conf": "verify" }, { "id": "up-quiver-50", "cat": "upgrade", "label": "Quiver (50 arrows)", "conf": "high" } ] },
+        { "id": "s-gerudo-valley-hp", "title": "Gerudo Valley collectibles", "loc": "Gerudo Valley", "do": "Heart Piece behind the waterfall / on the far ledge; a chest of rupees in the carpenter's tent.", "items": [ { "id": "hp-gerudo-valley", "cat": "hearts", "label": "Heart Piece — Gerudo Valley", "conf": "verify" } ] },
+        { "id": "s-requiem", "title": "Learn Requiem of Spirit", "loc": "Desert Colossus (Sheik)", "do": "Cross the Haunted Wasteland (use the Lens of Truth + flags) to the Colossus.", "items": [ { "id": "song-requiem", "cat": "song", "label": "Requiem of Spirit", "conf": "high" } ] },
+        { "id": "s-nayru", "title": "Great Fairy — Nayru's Love", "loc": "Desert Colossus (bomb the wall)", "items": [ { "id": "fairy-nayru", "cat": "fairy", "label": "Great Fairy — Nayru's Love", "conf": "high" } ] },
+        { "id": "s-silver-gauntlets", "title": "Spirit Temple (child half) — Silver Gauntlets", "loc": "Spirit Temple", "do": "Enter as CHILD via Requiem; the child half grants the Silver Gauntlets.", "items": [ { "id": "up-silver-gauntlets", "cat": "upgrade", "label": "Silver Gauntlets", "conf": "high" } ] },
+        { "id": "s-mirror-shield", "title": "Spirit Temple (adult half) — Mirror Shield", "loc": "Spirit Temple", "do": "Return as ADULT; the Mirror Shield is the adult-half item.", "items": [ { "id": "i-mirror-shield", "cat": "equip", "label": "Mirror Shield", "conf": "high" } ] },
+        { "id": "s-spirit-clear", "title": "Defeat Twinrova — Spirit Medallion", "loc": "Spirit Temple (boss)", "items": [ { "id": "d-spirit", "cat": "dungeon", "label": "Spirit Temple (cleared)", "conf": "high" }, { "id": "md-spirit", "cat": "sacred", "label": "Spirit Medallion", "conf": "high" } ] },
+        { "id": "s-desert-hp", "title": "Desert Colossus Heart Piece", "loc": "Desert Colossus (plant a bean / Longshot the palm)", "items": [ { "id": "hp-colossus", "cat": "hearts", "label": "Heart Piece — Desert Colossus", "conf": "verify" } ] },
+        { "id": "s-gtg", "title": "Gerudo Training Ground", "loc": "Gerudo Training Ground", "do": "Optional vault of chests (Ice Arrows live here); some Gold Skulltulas and a bigger Quiver/rupees.", "items": [ { "id": "i-ice-arrow", "cat": "item", "label": "Ice Arrows (Training Ground)", "conf": "high" }, { "id": "gs-gtg", "cat": "gs", "type": "tally", "count": 0, "label": "Gold Skulltulas here (verify: may be 0)", "conf": "verify" } ] },
+        { "id": "s-gs-gerudo", "title": "Gold Skulltulas — Gerudo Valley / Wasteland / Colossus / Spirit", "loc": "Gerudo region & Spirit Temple", "items": [ { "id": "gs-gerudo", "cat": "gs", "type": "tally", "count": 14, "label": "Gold Skulltulas here", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p16-trades-fairies",
+      "title": "Biggoron's Sword, the last bottle & spells",
+      "era": "adult",
+      "blurb": "The timed Biggoron trade, the Big Poe bottle, the Magic Bean Heart Pieces (now grown), and the remaining elemental spells.",
+      "steps": [
+        { "id": "s-biggoron", "title": "Biggoron's Sword trade chain (TIMED)", "loc": "Kakariko → Lost Woods → DM → Lake → Zora → back", "do": "Pocket Egg → Cojiro → Odd Mushroom → Odd Potion → Poacher's Saw → Broken Goron's Sword → Prescription → Eyeball Frog → Eyedrops → Claim Check. Several legs are on a clock — don't dawdle (Odd Mushroom & Eyedrops especially).", "missable": false, "missableNote": "Eyeball Frog → Eyedrops → World's Finest is timed; deliver fast or restart that leg.", "items": [ { "id": "i-biggoron-sword", "cat": "equip", "label": "Biggoron's Sword", "conf": "high" }, { "id": "tr-biggoron", "cat": "trade", "label": "Biggoron trade chain complete", "conf": "high" } ] },
+        { "id": "s-big-poe", "title": "Bottle #3 — Big Poe", "loc": "Hyrule Field (on Epona, night) → Ghost Shop (Market)", "do": "Catch a Big Poe and sell it at the Ghost Shop → empty Bottle.", "items": [ { "id": "bot-bigpoe", "cat": "bottle", "label": "Bottle (Big Poe)", "conf": "high" } ] },
+        { "id": "s-talon-bottle", "title": "Bottle #4 — Lon Lon Super Cucco game", "loc": "Lon Lon Ranch (wake Talon, play the cucco game)", "do": "Find the 3 special cuccos in time → Bottle (with Lon Lon Milk).", "items": [ { "id": "bot-talon", "cat": "bottle", "label": "Bottle (Lon Lon cucco game)", "conf": "high" } ] },
+        { "id": "s-bean-hps", "title": "Magic Bean Heart Pieces (grown platforms)", "loc": "various soft-soil spots", "do": "Ride the grown bean plants for Heart Pieces (Lake Hylia, DM Trail, Zora's River, Graveyard, etc.). Only works if you planted them as a child.", "missable": true, "missableNote": "Beans must have been planted as a child to have grown by now.", "items": [ { "id": "hp-bean-1", "cat": "hearts", "label": "Heart Piece — bean platform (1)", "conf": "verify" }, { "id": "hp-bean-2", "cat": "hearts", "label": "Heart Piece — bean platform (2)", "conf": "verify" } ] },
+        { "id": "s-spells", "title": "Remaining spells & arrows", "loc": "various", "do": "Confirm Din's Fire / Farore's Wind / Nayru's Love, plus Fire Arrows (Lake Hylia, sunrise on the island), Ice Arrows (Training Ground). Light Arrows come from Zelda before Ganon's Castle.", "items": [ { "id": "i-fire-arrow", "cat": "item", "label": "Fire Arrows (Lake Hylia)", "conf": "high" } ] },
+        { "id": "s-bullet-bag", "title": "Slingshot Bullet Bag upgrades (child)", "loc": "Market shooting gallery / Lost Woods scrub", "do": "Two Bullet Bag upgrades (40 → 50 seeds).", "items": [ { "id": "up-bullet-bag", "cat": "upgrade", "label": "Bullet Bag upgrades", "conf": "verify" } ] }
+      ]
+    },
+    {
+      "id": "p17-ganon",
+      "title": "Final sweep, Ganon's Castle & the end",
+      "era": "adult",
+      "blurb": "Golden Gauntlets, Double Defense, the Light Arrows, the 50/100 Skulltula rewards, then finish.",
+      "steps": [
+        { "id": "s-final-checklist", "title": "FINAL 100% audit before the point of no return", "loc": "everywhere", "do": "Compare in-game Gold Skulltula count to 100, Heart Pieces to 24 (÷4 = 6 containers), confirm all 12 songs, both swords, all 3 tunics/boots/shields, all 4 bottles, both trade chains, all 6 Great Fairies, 3 stones + 6 medallions. The tracker meters should all read full.", "missable": true, "missableNote": "Some content technically still grabbable after, but treat this as the wall.", "items": [] },
+        { "id": "s-gs-50-100", "title": "Skulltula House 50 & 100 rewards", "loc": "House of Skulltula, Kakariko", "do": "Heart Piece at 50 tokens (already listed) and the Huge Rupee at 100.", "items": [ { "id": "tr-gs100", "cat": "trade", "label": "100 GS reward (Huge Rupee)", "conf": "verify" } ] },
+        { "id": "s-golden-gauntlets", "title": "Ganon's Castle — Golden Gauntlets & Double Defense", "loc": "Ganon's Castle (trials)", "do": "Light Arrows from Zelda; the Spirit trial / castle grants Golden Gauntlets; the moat Great Fairy gives Double Defense.", "items": [ { "id": "i-light-arrow", "cat": "item", "label": "Light Arrows", "conf": "high" }, { "id": "up-golden-gauntlets", "cat": "upgrade", "label": "Golden Gauntlets", "conf": "high" }, { "id": "fairy-defense", "cat": "fairy", "label": "Great Fairy — Double Defense", "conf": "high" } ] },
+        { "id": "s-ganon", "title": "Defeat Ganondorf / Ganon — finish the game", "loc": "Ganon's Castle / Tower", "do": "100% in one sitting. GG.", "items": [ { "id": "d-ganon", "cat": "dungeon", "label": "Ganon's Castle (cleared)", "conf": "high" } ] }
+      ]
+    }
+  ]
+}
