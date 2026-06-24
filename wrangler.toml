@@ -2,6 +2,16 @@ name = "zelda-oot-100-tracker"
 main = "worker.js"
 compatibility_date = "2025-06-01"
 
+# Keep the workers.dev URL alive as a fallback alongside the custom domain.
+workers_dev = true
+
+# Custom domain — requires nabunan.com to be an active zone in this Cloudflare
+# account (same zone as finance.nabunan.com). Wrangler creates the DNS record +
+# cert for oot.nabunan.com on deploy. The workers.dev URL keeps working too.
+routes = [
+  { pattern = "oot.nabunan.com", custom_domain = true }
+]
+
 # Static SPA lives in ./public and is served via the ASSETS binding.
 # (Worker runs only for non-asset routes — leaves room for a future /api/* sync layer.)
 [assets]
