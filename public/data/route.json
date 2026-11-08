@@ -2,7 +2,7 @@
   "meta": {
     "game": "The Legend of Zelda: Ocarina of Time (N64 100% definition)",
     "subtitle": "Switch 2 remake — midnight-launch one-sitting 100% binge route",
-    "version": "0.7.0",
+    "version": "0.7.1",
     "scope": "Structured to mirror the Zelda Dungeon walkthrough exactly — same 14 chapters and numbered sections, same path. 36 Heart Pieces, 100 Gold Skulltulas (both in Zelda Dungeon's collection-order numbering), 12 songs, all equipment/items/upgrades, 4 bottles, 6 Great Fairies, 3 Spiritual Stones, 6 Medallions, every dungeon.",
     "confidencePolicy": "Chapters, sections, path order, collectible placement and ALL missable/time-sensitive callouts are taken from the Zelda Dungeon walkthrough. Follow top to bottom and use the ⚠ missable notes. Trust the in-game counters over any wording.",
     "remakeNote": "Built pre-release on the original N64 baseline. Patch in remake-specific changes on launch night.",
@@ -23,7 +23,7 @@
     },
     "enrichmentNote": "v0.6.0: plot/boss/strategy text removed; the per-area collectibles are now CHECKABLE duplicate items (dashed 'Also in this area' box) that share the real item's id — check one off if you hit or glitch it early and it counts where you normally collect it, never twice.",
     "spoilerPolicy": "Plot, boss names and boss strategies are omitted. Dungeon 'clear' steps just say to clear the dungeon. Section/chapter titles keep the Zelda Dungeon names (they're the structural labels).",
-    "beanNote": "v0.7.0: every Magic Bean soft-soil spot now has a proactive, checkable 🌱 'Plant a Magic Bean here' reminder at the right moment (a child planting pass at §5.1, plus the Graveyard §6.2, DM Crater §8.3, Desert Colossus §13.3). These are reminders — they don't count toward 100% and don't gate a section."
+    "beanNote": "v0.7.1: 7 bean-plant spots total (the only ones a 100% run needs; other soft soil gives its Skulltula via a bug drop, no bean). ALL planting is done as a child: 5 early (§5.1 pass + Graveyard §6.2) and 2 warp-only spots planted as a child after you learn Bolero/Requiem (DM Crater §8.3, Desert Colossus §13.3), then ridden as an adult. Lake Hylia (HP #23) and Zora's River (GS #65) have non-bean alternatives."
   },
   "categories": {
     "hearts": {
@@ -1216,7 +1216,7 @@
               "cat": "bean",
               "task": true,
               "added": true,
-              "label": "🌱 Plant a Magic Bean on the Zora's River plateau (upper ledge) — grows for GS #65, which you ride up to at §9.1.",
+              "label": "🌱 Plant a Magic Bean on the Zora's River plateau (upper ledge) — grows for GS #65 (ride it at §9.1; if unplanted you can instead swim up from the east).",
               "conf": "high"
             },
             {
@@ -1224,7 +1224,7 @@
               "cat": "bean",
               "task": true,
               "added": true,
-              "label": "🌱 Plant a Magic Bean by the Lakeside Laboratory at Lake Hylia — grows for HP #23 (§8.1). Walk over as a child now while you're planting.",
+              "label": "🌱 Plant a Magic Bean by the Lakeside Laboratory at Lake Hylia — grows for HP #23 (§8.1). Optional: skip it and use the Scarecrow's Song + Hookshot there instead.",
               "conf": "high"
             },
             {
@@ -1240,7 +1240,7 @@
               "cat": "bean",
               "task": true,
               "added": true,
-              "label": "🌱 Plant a Magic Bean at the Dodongo's Cavern entrance (Death Mountain Trail) — grows for HP #26 (§8.2).",
+              "label": "🌱 Plant a Magic Bean at the Dodongo's Cavern entrance (Death Mountain Trail) — grows for HP #26 (§8.2); also a handy time-saver for the Biggoron trade runs.",
               "conf": "high"
             },
             {
@@ -1289,7 +1289,7 @@
             }
           ],
           "missable": true,
-          "missableNote": "BUY ALL THE MAGIC BEANS — this salesman is the ONLY source, and beans planted now (as a child) grow into platforms you need as an adult for several Heart Pieces/Skulltulas. (The bean-salesman's own soft-soil patch is the one and only soft soil in the game with NO Gold Skulltula — don't waste bugs there.) GS #29 is night-only."
+          "missableNote": "BUY ALL THE MAGIC BEANS — this salesman is the ONLY source, and beans planted now (as a child) grow into platforms you need as an adult for several Heart Pieces/Skulltulas. (The bean-salesman's own soft-soil patch is the one and only soft soil in the game with NO Gold Skulltula — don't waste bugs there.) GS #29 is night-only. NOTE: Magic Beans can ONLY be planted as a child — plant every spot you can reach now, and the two warp-only spots (Death Mountain Crater, Desert Colossus) you'll plant as a child later once you have the Bolero / Requiem."
         },
         {
           "id": "s-5.2",
@@ -1915,7 +1915,7 @@
               "cat": "bean",
               "task": true,
               "added": true,
-              "label": "🌱 Plant a Magic Bean in the Death Mountain Crater soft soil, then warp away and back so it grows — ride it for HP #27.",
+              "label": "🌱 Plant a Magic Bean in the Death Mountain Crater soft soil — plant it AS A CHILD: warp here as a child with the Bolero of Fire (you're already here as a child for GS #57), then return as an adult and it's grown — ride it for HP #27.",
               "conf": "high"
             }
           ],
@@ -2671,7 +2671,7 @@
               "cat": "bean",
               "task": true,
               "added": true,
-              "label": "🌱 Plant a Magic Bean at the Desert Colossus soft soil (outside the temple), then warp away and back so it grows — ride it for HP #36 and GS #93.",
+              "label": "🌱 Plant a Magic Bean at the Desert Colossus soft soil (outside the temple) — plant it AS A CHILD (you're here as a child via the Requiem for GS #92); return as an adult and it's grown — ride it for HP #36 and GS #93.",
               "conf": "high"
             },
             {
