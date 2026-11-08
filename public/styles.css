@@ -130,6 +130,11 @@ a { color: var(--accent); }
 .item.ref { padding: 5px 6px; }
 .item.ref .txt { font-size: 13px; }
 .ref-chip { font-size: 10px; color: var(--new); border: 1px solid var(--new-line); border-radius: 99px; padding: 0 7px; white-space: nowrap; flex: none; }
+/* task reminders (e.g. plant a Magic Bean) — not collectibles, don't count */
+.item.task { border-left: 3px solid var(--accent2); background: linear-gradient(90deg, #11271d 0%, transparent 60%); padding-left: 7px; }
+.item.task:hover { background: linear-gradient(90deg, #163524 0%, #12291b 70%); }
+.item.task input[type=checkbox] { accent-color: var(--accent2); }
+.task-chip { font-size: 10px; color: var(--accent2); border: 1px solid #2c6b40; border-radius: 99px; padding: 0 7px; white-space: nowrap; flex: none; text-transform: uppercase; letter-spacing: .3px; }
 
 /* tally stepper */
 .tally { display: flex; align-items: center; gap: 8px; }

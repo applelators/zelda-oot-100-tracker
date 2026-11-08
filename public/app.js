@@ -37,8 +37,8 @@
     return [{ id: step.id + ":done", cat: "misc", label: "Mark this step done" }];
   }
   function stepDone(step) {
-    // ref items are optional early cross-refs — they don't gate a section's completion
-    return stepItems(step).filter((i) => !i.ref).every(itemDone);
+    // ref (early cross-refs) and task (reminders) are optional — they don't gate completion
+    return stepItems(step).filter((i) => !i.ref && !i.task).every(itemDone);
   }
   function phaseDone(phase) {
     return phase.steps.every(stepDone);
@@ -52,7 +52,7 @@
     for (const ph of DATA.phases) {
       for (const st of ph.steps) {
         for (const it of (st.items || [])) {
-          if (it.cat === "misc" || it.ref) continue;   // ref = duplicate cross-ref, counts at its canonical item
+          if (it.cat === "misc" || it.ref || it.task) continue;   // ref = dup cross-ref; task = reminder (e.g. plant a bean) — neither counts
           const c = cats[it.cat] || (cats[it.cat] = { v: 0, max: 0 });
           if (it.type === "tally") {
             c.max += it.count; max += it.count;
@@ -186,6 +186,13 @@
       </li>`;
     }
     const newPill = it.added ? `<span class="new-pill" title="Detail added in v0.5.0 — not in the original tracker">new</span>` : "";
+    if (it.task) {
+      const taskChip = `<span class="task-chip" title="A reminder, not a collectible — it doesn't count toward 100%.">reminder</span>`;
+      return `<li class="item ${done ? "checked" : ""} task" data-search="${esc((it.label + " " + it.id).toLowerCase())}">
+        <label><input type="checkbox" data-id="${esc(it.id)}" ${done ? "checked" : ""}/>
+        <span class="txt">${esc(it.label)} ${newPill}</span></label>${taskChip}
+      </li>`;
+    }
     if (it.ref) {
       const refChip = `<span class="ref-chip" title="You normally collect this in §${esc(it.refSec)}. Tick it only if you grab or glitch it early — it counts where it's normally collected, never twice.">normally §${esc(it.refSec)}${it.avail ? " · " + esc(it.avail) : ""}</span>`;
       return `<li class="item ${done ? "checked" : ""} ref" data-search="${esc((it.label + " " + it.id).toLowerCase())}">

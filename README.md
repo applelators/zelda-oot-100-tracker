@@ -82,6 +82,14 @@ The original N64 completion set, all itemized and metered:
    a Boomerang-only Lon Lon Skulltula at night) — it counts at its real spot and
    **never double-counts** (refs are skipped in the meters and don't gate a section).
 
+6. **v0.7.0 — proactive bean planting.** Every Magic Bean soft-soil spot now has a
+   checkable 🌱 **“Plant a Magic Bean here”** reminder at the right moment: a child
+   planting pass at §5.1 (Zora's River plateau, Lake Hylia, Lost Woods Meadow,
+   Dodongo entrance) plus the Graveyard (§6.2), Death Mountain Crater (§8.3), and
+   Desert Colossus (§13.3). They're green “reminder” items — they **don't count**
+   toward 100% and **don't gate** a section; they're just so you never have to
+   remember to backtrack to each soft soil yourself.
+
 Source of truth: zeldadungeon.net/ocarina-of-time-walkthrough.
 
 ## Run it
