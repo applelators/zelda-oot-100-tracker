@@ -96,13 +96,22 @@ a { color: var(--accent); }
 /* steps */
 .step { border: 1px solid var(--line); border-radius: 10px; margin: 8px 4px; background: #0f2317; }
 .step.done { opacity: .55; }
-.step.missable { border-color: #6b4f1e; }
-.step-head { display: flex; gap: 8px; align-items: baseline; padding: 9px 12px 4px; }
-.step-head .stitle { font-weight: 700; font-size: 14px; flex: 1; }
+.step.flagged { border-color: #314a66; }
+.step.pnr { border-color: #7a2f27; background: #1c1512; }
+.step-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; padding: 9px 12px 4px; }
+.step-head .stitle { font-weight: 700; font-size: 14px; flex: 1; min-width: 160px; }
 .step-loc { color: var(--accent2); font-size: 12px; }
 .step-do { padding: 0 12px 6px; color: var(--muted); font-size: 12.5px; }
-.missable-flag { display: inline-block; background: #3a2a12; color: var(--warn); border: 1px solid #6b4f1e; font-size: 10.5px; font-weight: 700; padding: 1px 7px; border-radius: 99px; text-transform: uppercase; letter-spacing: .4px; }
-.missable-note { padding: 0 12px 6px; color: var(--warn); font-size: 12px; }
+.step-note { padding: 2px 12px 6px; color: var(--muted); font-size: 12px; }
+.step-note.pnr { color: var(--danger); font-weight: 600; }
+/* condition chips (replaces the old blanket "missable" tag) */
+.flag { display: inline-flex; align-items: center; gap: 3px; font-size: 10.5px; font-weight: 700; padding: 1px 8px; border-radius: 99px; white-space: nowrap; border: 1px solid var(--line); background: #0c1322; letter-spacing: .2px; }
+.flag-night { color: #7fb8ff; border-color: #355a8c; }
+.flag-prep  { color: #7be0a8; border-color: #2c6b40; }
+.flag-timed { color: var(--warn); border-color: #6b531e; }
+.flag-child { color: #c4a6ff; border-color: #5a4c8a; }
+.flag-pnr   { color: #ff8a7a; border-color: #7a2f27; background: #2a1514; text-transform: uppercase; }
+footer .flag { font-size: 10px; }
 
 /* items */
 .items { list-style: none; margin: 0; padding: 2px 8px 8px; }

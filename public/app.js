@@ -138,7 +138,7 @@
 
     <div class="controls">
       <label class="toggle"><input type="checkbox" id="t-hide" ${Store.getPref("hideCompleted") ? "checked" : ""}/> Hide completed steps</label>
-      <label class="toggle"><input type="checkbox" id="t-miss" ${Store.getPref("onlyMissable") ? "checked" : ""}/> Only missable steps</label>
+      <label class="toggle"><input type="checkbox" id="t-miss" ${Store.getPref("onlyMissable") ? "checked" : ""}/> Only flagged steps</label>
       <div class="controls-right">
         <input class="search" id="search" type="search" placeholder="Search items / locations…" value="${esc(Store.getPref("search") || "")}" />
         <button class="btn" id="btn-export">Export</button>
@@ -230,12 +230,18 @@
     const normal = all.filter((i) => !i.ref);
     const refs = all.filter((i) => i.ref);
     const items = normal.map(itemRow).join("");
-    const missFlag = step.missable ? `<span class="missable-flag">missable</span>` : "";
-    const missNote = step.missableNote ? `<div class="missable-note">⚠ ${esc(step.missableNote)}</div>` : "";
-    return `<div class="step ${done ? "done" : ""} ${step.missable ? "missable" : ""}" id="step-${esc(step.id)}">
-      <div class="step-head"><span class="stitle">${esc(step.title)}</span> ${missFlag} <span class="step-loc">${esc(step.loc || "")}</span></div>
+    const flags = step.flags || [];
+    const legend = (DATA.meta && DATA.meta.flagLegend) || {};
+    const chips = flags.map((f) => {
+      const L = legend[f] || { icon: "", label: f, desc: "" };
+      return `<span class="flag flag-${esc(f)}" title="${esc(L.desc || "")}">${L.icon} ${esc(L.label)}</span>`;
+    }).join(" ");
+    const isPnr = flags.indexOf("pnr") >= 0;
+    const note = step.note ? `<div class="step-note ${isPnr ? "pnr" : ""}">${isPnr ? "⚠️ " : ""}${esc(step.note)}</div>` : "";
+    return `<div class="step ${done ? "done" : ""} ${flags.length ? "flagged" : ""} ${isPnr ? "pnr" : ""}" id="step-${esc(step.id)}">
+      <div class="step-head"><span class="stitle">${esc(step.title)}</span> ${chips} <span class="step-loc">${esc(step.loc || "")}</span></div>
       ${step.do ? `<div class="step-do">${esc(step.do)}</div>` : ""}
-      ${missNote}
+      ${note}
       <ul class="items">${items}</ul>
       ${areaRefBlock(refs)}
     </div>`;
@@ -273,7 +279,13 @@
       ${renderFocus()}
       ${phases}
       <footer>
-        Mirrors the Zelda Dungeon walkthrough · no plot, boss names, or boss strategies. Items with a <span class="new-pill">new</span> pill carry how-to-get details; the dashed “Also in this area” boxes are collectibles you normally get later — tick one only if you grab or glitch it early (it counts at its real spot, never twice).<br/>
+        <strong>Nothing in OoT is permanently missable</strong> — you can swap child/adult and revisit every area until the end. Chips just flag conditions:
+        <span class="flag flag-night">🌙 night-only</span>
+        <span class="flag flag-prep">🌱 prep ahead</span>
+        <span class="flag flag-timed">⏱️ timed · retryable</span>
+        <span class="flag flag-child">🧒 child-only</span>
+        — and <span class="flag flag-pnr">⚠️ point of no return</span> marks the one real deadline (Ganon's Castle).<br/>
+        Mirrors the Zelda Dungeon walkthrough · no plot/boss names. Items with a <span class="new-pill">new</span> pill carry how-to-get details; the dashed “Also in this area” boxes are collectibles you normally get later (tick one only if you grab or glitch it early — it counts at its real spot, never twice).<br/>
         Progress saved locally on this device. Export to back it up.
       </footer>`);
     applyFilters();
@@ -296,7 +308,7 @@
         if (!node) return;
         let show = true;
         if (hide && stepDone(st)) show = false;
-        if (onlyMiss && !st.missable) show = false;
+        if (onlyMiss && !(st.flags && st.flags.length)) show = false;
         if (q) {
           const hay = (st.title + " " + (st.loc || "") + " " + (st.do || "") + " " +
             stepItems(st).map((i) => i.label).join(" ")).toLowerCase();
