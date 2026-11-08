@@ -37,7 +37,8 @@
     return [{ id: step.id + ":done", cat: "misc", label: "Mark this step done" }];
   }
   function stepDone(step) {
-    return stepItems(step).every(itemDone);
+    // ref items are optional early cross-refs — they don't gate a section's completion
+    return stepItems(step).filter((i) => !i.ref).every(itemDone);
   }
   function phaseDone(phase) {
     return phase.steps.every(stepDone);
@@ -51,7 +52,7 @@
     for (const ph of DATA.phases) {
       for (const st of ph.steps) {
         for (const it of (st.items || [])) {
-          if (it.cat === "misc") continue;
+          if (it.cat === "misc" || it.ref) continue;   // ref = duplicate cross-ref, counts at its canonical item
           const c = cats[it.cat] || (cats[it.cat] = { v: 0, max: 0 });
           if (it.type === "tally") {
             c.max += it.count; max += it.count;
@@ -185,35 +186,43 @@
       </li>`;
     }
     const newPill = it.added ? `<span class="new-pill" title="Detail added in v0.5.0 — not in the original tracker">new</span>` : "";
+    if (it.ref) {
+      const refChip = `<span class="ref-chip" title="You normally collect this in §${esc(it.refSec)}. Tick it only if you grab or glitch it early — it counts where it's normally collected, never twice.">normally §${esc(it.refSec)}${it.avail ? " · " + esc(it.avail) : ""}</span>`;
+      return `<li class="item ${done ? "checked" : ""} ref" data-search="${esc((it.label + " " + it.id).toLowerCase())}">
+        <label><input type="checkbox" data-id="${esc(it.id)}" ${done ? "checked" : ""}/>
+        <span class="txt">${esc(it.label)}</span></label>${refChip}
+      </li>`;
+    }
     return `<li class="item ${done ? "checked" : ""} ${it.added ? "added" : ""}" data-search="${esc((it.label + " " + it.id).toLowerCase())}">
       <label><input type="checkbox" data-id="${esc(it.id)}" ${done ? "checked" : ""}/>
       <span class="txt">${esc(it.label)} ${verify} ${newPill}</span></label>${pill}
     </li>`;
   }
 
-  // per-area "future returns" cross-reference (added in v0.5.0)
-  function areaNoteBlock(note) {
-    if (!note || !note.groups || !note.groups.length) return "";
-    const groups = note.groups.map((g) => `
-      <div class="an-group">
-        <div class="an-area">${esc(g.area)}</div>
-        <ul>${g.items.map((s) => {
-          const m = s.match(/^(.*?)(\s*\([^)]*\))?$/);
-          const main = m ? m[1] : s;
-          const tag = m && m[2] ? `<span class="an-tag">${esc(m[2])}</span>` : "";
-          return `<li>${esc(main)} ${tag}</li>`;
-        }).join("")}</ul>
+  // per-area checkable duplicates — collectibles located here that you normally
+  // get in a later section (added v0.5.0; made checkable v0.6.0). Same id as the
+  // real item, so checking one here counts at the canonical spot and never twice.
+  function areaRefBlock(refs) {
+    if (!refs.length) return "";
+    const byArea = {};
+    refs.forEach((r) => { (byArea[r.area || "Here"] = byArea[r.area || "Here"] || []).push(r); });
+    const groups = Object.keys(byArea).map((area) => `
+      <div class="ah-group"><div class="ah-area">${esc(area)}</div>
+        <ul class="items">${byArea[area].map(itemRow).join("")}</ul>
       </div>`).join("");
-    return `<div class="area-note">
-      <div class="an-head"><span class="new-pill">new</span> Also in this area
-        <span class="an-sub">— collectibles here you'll return for in later sections</span></div>
+    return `<div class="also-here">
+      <div class="ah-head"><span class="new-pill">new</span> Also in this area
+        <span class="an-sub">— you normally collect these in later sections. Tick one only if you grab or glitch it early; it counts where it's normally collected, never twice.</span></div>
       ${groups}
     </div>`;
   }
 
   function stepBlock(step) {
     const done = stepDone(step);
-    const items = stepItems(step).map(itemRow).join("");
+    const all = stepItems(step);
+    const normal = all.filter((i) => !i.ref);
+    const refs = all.filter((i) => i.ref);
+    const items = normal.map(itemRow).join("");
     const missFlag = step.missable ? `<span class="missable-flag">missable</span>` : "";
     const missNote = step.missableNote ? `<div class="missable-note">⚠ ${esc(step.missableNote)}</div>` : "";
     return `<div class="step ${done ? "done" : ""} ${step.missable ? "missable" : ""}" id="step-${esc(step.id)}">
@@ -221,7 +230,7 @@
       ${step.do ? `<div class="step-do">${esc(step.do)}</div>` : ""}
       ${missNote}
       <ul class="items">${items}</ul>
-      ${areaNoteBlock(step.areaNote)}
+      ${areaRefBlock(refs)}
     </div>`;
   }
 
@@ -257,7 +266,7 @@
       ${renderFocus()}
       ${phases}
       <footer>
-        Mirrors the Zelda Dungeon walkthrough · items with a <span class="new-pill">new</span> pill and the dashed “Also in this area” boxes were added in v0.5.0 (how-to-get details + per-area future-return cross-refs) — not in the original tracker.<br/>
+        Mirrors the Zelda Dungeon walkthrough · no plot, boss names, or boss strategies. Items with a <span class="new-pill">new</span> pill carry how-to-get details; the dashed “Also in this area” boxes are collectibles you normally get later — tick one only if you grab or glitch it early (it counts at its real spot, never twice).<br/>
         Progress saved locally on this device. Export to back it up.
       </footer>`);
     applyFilters();
@@ -282,10 +291,8 @@
         if (hide && stepDone(st)) show = false;
         if (onlyMiss && !st.missable) show = false;
         if (q) {
-          const anTxt = st.areaNote && st.areaNote.groups
-            ? st.areaNote.groups.map((g) => g.area + " " + g.items.join(" ")).join(" ") : "";
           const hay = (st.title + " " + (st.loc || "") + " " + (st.do || "") + " " +
-            stepItems(st).map((i) => i.label).join(" ") + " " + anTxt).toLowerCase();
+            stepItems(st).map((i) => i.label).join(" ")).toLowerCase();
           if (!hay.includes(q)) show = false;
         }
         node.style.display = show ? "" : "none";

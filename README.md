@@ -74,6 +74,14 @@ The original N64 completion set, all itemized and metered:
    pill + left border, area boxes get a dashed periwinkle border — so it's clear
    what wasn't in the original tracker. 86 items enriched, 16 area notes.
 
+5. **v0.6.0 — spoiler-light + checkable duplicates.** All plot/story, boss names,
+   and boss strategies removed (dungeon steps just say “clear the dungeon”;
+   section/chapter titles keep ZD's structural names). The per-area “Also in this
+   area” items are now **checkable duplicates**: each shares the real item's id, so
+   you can tick a Skulltula/Heart Piece you hit or glitch early (e.g. slingshotting
+   a Boomerang-only Lon Lon Skulltula at night) — it counts at its real spot and
+   **never double-counts** (refs are skipped in the meters and don't gate a section).
+
 Source of truth: zeldadungeon.net/ocarina-of-time-walkthrough.
 
 ## Run it

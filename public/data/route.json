@@ -2,7 +2,7 @@
   "meta": {
     "game": "The Legend of Zelda: Ocarina of Time (N64 100% definition)",
     "subtitle": "Switch 2 remake — midnight-launch one-sitting 100% binge route",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "scope": "Structured to mirror the Zelda Dungeon walkthrough exactly — same 14 chapters and numbered sections, same path. 36 Heart Pieces, 100 Gold Skulltulas (both in Zelda Dungeon's collection-order numbering), 12 songs, all equipment/items/upgrades, 4 bottles, 6 Great Fairies, 3 Spiritual Stones, 6 Medallions, every dungeon.",
     "confidencePolicy": "Chapters, sections, path order, collectible placement and ALL missable/time-sensitive callouts are taken from the Zelda Dungeon walkthrough. Follow top to bottom and use the ⚠ missable notes. Trust the in-game counters over any wording.",
     "remakeNote": "Built pre-release on the original N64 baseline. Patch in remake-specific changes on launch night.",
@@ -21,7 +21,8 @@
       "high": "From the Zelda Dungeon walkthrough.",
       "verify": "Minor detail to confirm in-game."
     },
-    "enrichmentNote": "v0.5.0 additions (marked NEW in the UI): every key item now carries HOW to obtain it, and each area shows the Gold Skulltulas / Heart Pieces located there that you return for in later sections. All grounded in the Zelda Dungeon walkthrough."
+    "enrichmentNote": "v0.6.0: plot/boss/strategy text removed; the per-area collectibles are now CHECKABLE duplicate items (dashed 'Also in this area' box) that share the real item's id — check one off if you hit or glitch it early and it counts where you normally collect it, never twice.",
+    "spoilerPolicy": "Plot, boss names and boss strategies are omitted. Dungeon 'clear' steps just say to clear the dungeon. Section/chapter titles keep the Zelda Dungeon names (they're the structural labels)."
   },
   "categories": {
     "hearts": {
@@ -105,21 +106,41 @@
               "label": "Deku Shield — Buy it from the Kokiri Shop for 40 Rupees (cut the grass and smash pots around the village to afford it). Equip it before talking to Mido.",
               "conf": "high",
               "added": true
+            },
+            {
+              "id": "gs17",
+              "cat": "gs",
+              "label": "GS #17 — Found only at nighttime in the Kokiri Forest. The skulltula is on the backside of the Know-It-All-Brothers’ House, located at the southwest part of the town.",
+              "ref": true,
+              "area": "Kokiri Forest",
+              "refSec": "3.6",
+              "refTitle": "Lost Woods",
+              "avail": "night",
+              "conf": "high"
+            },
+            {
+              "id": "gs20",
+              "cat": "gs",
+              "label": "GS #20 — Back on Kokiri Forest, make your way to the Shop where you bought a Deku Shield. Right behind it, drop some bugs into the Soft Soil location and a Skulltula will pop out.",
+              "ref": true,
+              "area": "Kokiri Forest",
+              "refSec": "3.6",
+              "refTitle": "Lost Woods",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "gs47",
+              "cat": "gs",
+              "label": "GS #47 — At nighttime in Kokiri Forest, make your way over to the Twins’ House, located at the southeast part of the forest. Use your Hookshot to defeat a Skulltula that is located above the building.",
+              "ref": true,
+              "area": "Kokiri Forest",
+              "refSec": "7.4",
+              "refTitle": "Return to the Forest",
+              "avail": "night · Hookshot",
+              "conf": "high"
             }
-          ],
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Kokiri Forest",
-                "items": [
-                  "GS #17 → §3.6 Lost Woods  (night)",
-                  "GS #20 → §3.6 Lost Woods",
-                  "GS #47 → §7.4 Return to the Forest  (night · Hookshot)"
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "s-1.3",
@@ -158,19 +179,19 @@
           "id": "s-1.4",
           "title": "1.4 Kokiri's Emerald",
           "loc": "Deku Tree (boss)",
-          "do": "Beat Queen Gohma (boss Heart Container), receive the first Spiritual Stone.",
+          "do": "Clear the dungeon to earn the first Spiritual Stone (and a Heart Container).",
           "items": [
             {
               "id": "d-deku",
               "cat": "dungeon",
-              "label": "Inside the Deku Tree (cleared) — Defeat Queen Gohma: stun her eye with the Slingshot (or a Deku Nut) when it glows red, then strike with your sword. Grab the Heart Container she leaves.",
+              "label": "Inside the Deku Tree (cleared) — Clear the dungeon and grab the Heart Container it leaves.",
               "conf": "high",
               "added": true
             },
             {
               "id": "kokiri-s-emerald",
               "cat": "sacred",
-              "label": "Kokiri's Emerald — The Great Deku Tree awards it after you defeat Queen Gohma — he shares his tale, then passes on.",
+              "label": "Kokiri's Emerald — Received for clearing the Deku Tree.",
               "conf": "high",
               "added": true
             }
@@ -211,24 +232,74 @@
               "label": "Bullet Bag upgrade (Slingshot ammo 30→40) — Get a perfect score at the Castle Town Shooting Gallery (child) to raise Slingshot ammo from 30 to 40.",
               "conf": "high",
               "added": true
+            },
+            {
+              "id": "gs5",
+              "cat": "gs",
+              "label": "GS #5 — Once you enter the area that leads to Hyrule Castle, there is tree to the left. Roll into the tree and the Skulltula will fall out.",
+              "ref": true,
+              "area": "Hyrule Castle/Market",
+              "refSec": "2.3",
+              "refTitle": "Hyrule Castle",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "hp9",
+              "cat": "hearts",
+              "label": "HP #9 — At nighttime in the Market, find the dog Richard, who is hanging out by the blue street vender stand. Lead Richard to the back ally on the other side of the market and talk to the woman inside the building to get a piece of heart.",
+              "ref": true,
+              "area": "Hyrule Castle/Market",
+              "refSec": "3.7",
+              "refTitle": "Collection Wrap-Up",
+              "avail": "night",
+              "conf": "high"
+            },
+            {
+              "id": "hp13",
+              "cat": "hearts",
+              "label": "HP #13 — Play the Bombchu Bowling mini-game at Castle Town and one of the prizes will be a Piece of Heart. It cycles through five prizes, so it might take a few tries before this one appears.",
+              "ref": true,
+              "area": "Hyrule Castle/Market",
+              "refSec": "4.4",
+              "refTitle": "Fun With Bombs",
+              "avail": "bomb",
+              "conf": "high"
+            },
+            {
+              "id": "gs46",
+              "cat": "gs",
+              "label": "GS #46 — Return to the Market and make your way to where Hyrule Castle use to be. You’ll find that it is now Ganon’s Castle.",
+              "ref": true,
+              "area": "Hyrule Castle/Market",
+              "refSec": "7.3",
+              "refTitle": "Hookshot Goodies",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "gs78",
+              "cat": "gs",
+              "label": "GS #78 — In the area just outside Hyrule Castle, there is a tree in the corner of the gate. Stand next to it and play the Song of Storms.",
+              "ref": true,
+              "area": "Hyrule Castle/Market",
+              "refSec": "11.2",
+              "refTitle": "Return to Childhood",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "hp33",
+              "cat": "hearts",
+              "label": "HP #33 — Using the Lens of Truth, play the Treasure Chest game in the Market at nighttime. The Lens of Truth will allow you to see which treasure chest holds the Small Key, so you can never fail at the game.",
+              "ref": true,
+              "area": "Hyrule Castle/Market",
+              "refSec": "11.4",
+              "refTitle": "Lens of Truth Goodies",
+              "avail": "night",
+              "conf": "high"
             }
-          ],
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Hyrule Castle/Market",
-                "items": [
-                  "GS #5 → §2.3 Hyrule Castle",
-                  "HP #9 → §3.7 Collection Wrap-Up  (night)",
-                  "HP #13 → §4.4 Fun With Bombs  (bomb)",
-                  "GS #46 → §7.3 Hookshot Goodies",
-                  "GS #78 → §11.2 Return to Childhood",
-                  "HP #33 → §11.4 Lens of Truth Goodies  (night)"
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "s-2.3",
@@ -245,14 +316,14 @@
             {
               "id": "song-lullaby",
               "cat": "song",
-              "label": "Zelda's Lullaby — Impa teaches it in the Castle courtyard right after you meet Princess Zelda.",
+              "label": "Zelda's Lullaby — Taught by Impa in the Hyrule Castle courtyard.",
               "conf": "high",
               "added": true
             },
             {
               "id": "tr-letter",
               "cat": "trade",
-              "label": "Weird Egg → Cucco → Zelda's Letter (trade chain begun) — From Zelda in the courtyard: the Weird Egg hatches overnight into a Cucco (use it to wake Talon), and Zelda's Letter kicks off the Happy Mask trade chain.",
+              "label": "Weird Egg → Cucco → Zelda's Letter (trade chain begun) — Get the Weird Egg here (it hatches overnight into a Cucco you use to wake Talon) plus Zelda's Letter, which starts the Happy Mask trade chain.",
               "conf": "high",
               "added": true
             }
@@ -297,25 +368,65 @@
               "cat": "hearts",
               "label": "HP #2 — Play Dampe’s Heart-Pounding Gravedigging Tour mini-game. While there are rupee rewards, the main objective is to collect a heart piece.",
               "conf": "high"
+            },
+            {
+              "id": "gs6",
+              "cat": "gs",
+              "label": "GS #6 — Take a bottle of bugs to the Graveyard near the Soft Soil location. Release the bugs onto the soil location and a Gold Skulltula will pop out of the ground.",
+              "ref": true,
+              "area": "Graveyard",
+              "refSec": "3.2",
+              "refTitle": "Kakariko Village",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "gs43",
+              "cat": "gs",
+              "label": "GS #43 — Found on the wall at the southeast corner of the Graveyard. The Skulltula can be found at nighttime and you’ll need the Boomerang to retrieve the token.",
+              "ref": true,
+              "area": "Graveyard",
+              "refSec": "5.5",
+              "refTitle": "Fun With The Boomerang",
+              "avail": "night · Boomerang",
+              "conf": "high"
+            },
+            {
+              "id": "hp18",
+              "cat": "hearts",
+              "label": "HP #18 — In the Graveyard, if you planted a Magic Bean as a child, there will be a Magic Bean flower that has grown. Ride it up to the higher ledge and roll into the wooden box to find the heart piece.",
+              "ref": true,
+              "area": "Graveyard",
+              "refSec": "7.2",
+              "refTitle": "Getting the Hookshot",
+              "avail": "child · bean",
+              "conf": "high"
+            },
+            {
+              "id": "hp19",
+              "cat": "hearts",
+              "label": "HP #19 — Found inside the Windmill. It is easiest to acquire this Heart Piece after completing Dampe’s race and acquiring the Hookshot.",
+              "ref": true,
+              "area": "Graveyard",
+              "refSec": "7.2",
+              "refTitle": "Getting the Hookshot",
+              "avail": "Hookshot",
+              "conf": "high"
+            },
+            {
+              "id": "hp20",
+              "cat": "hearts",
+              "label": "HP #20 — After acquiring the Hookshot from Dampe, return to his grave and speak with him again. You can race him once again.",
+              "ref": true,
+              "area": "Graveyard",
+              "refSec": "7.3",
+              "refTitle": "Hookshot Goodies",
+              "avail": "Hookshot",
+              "conf": "high"
             }
           ],
           "missable": true,
-          "missableNote": "HP #1 (Sun's-Song ReDead grave) and HP #2 (Dampé's gravedigging) both need NIGHT — Dampé only digs 18:00–21:00 and the Heart Piece is a ~10% random drop per dig, so keep paying/digging until it appears. Play Sun's Song to force night.",
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Graveyard",
-                "items": [
-                  "GS #6 → §3.2 Kakariko Village",
-                  "GS #43 → §5.5 Fun With The Boomerang  (night · Boomerang)",
-                  "HP #18 → §7.2 Getting the Hookshot  (child · bean)",
-                  "HP #19 → §7.2 Getting the Hookshot  (Hookshot)",
-                  "HP #20 → §7.3 Hookshot Goodies  (Hookshot)"
-                ]
-              }
-            ]
-          }
+          "missableNote": "HP #1 (Sun's-Song ReDead grave) and HP #2 (Dampé's gravedigging) both need NIGHT — Dampé only digs 18:00–21:00 and the Heart Piece is a ~10% random drop per dig, so keep paying/digging until it appears. Play Sun's Song to force night."
         },
         {
           "id": "s-3.2",
@@ -372,24 +483,54 @@
               "cat": "gs",
               "label": "GS #11 — Against the side of the building closest to the base of Death Mountain. Next, we’re going to enter the House of Skulltula , which is right across from the construction area.",
               "conf": "high"
+            },
+            {
+              "id": "gs42",
+              "cat": "gs",
+              "label": "GS #42 — Located in Hyrule Field, right near the entrance to Kakariko Village. Just north of the small bridge that is between Castle Town and Kakariko Village, you will find a tree.",
+              "ref": true,
+              "area": "Kakariko Village",
+              "refSec": "5.5",
+              "refTitle": "Fun With The Boomerang",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "hp21",
+              "cat": "hearts",
+              "label": "HP #21 — In Kakariko Village, right when you come out of the Windmill, jump onto the fence that is straight ahead. From here, you can use your Hookshot to get on top of the building just to the right.",
+              "ref": true,
+              "area": "Kakariko Village",
+              "refSec": "7.3",
+              "refTitle": "Hookshot Goodies",
+              "avail": "Hookshot",
+              "conf": "high"
+            },
+            {
+              "id": "gs45",
+              "cat": "gs",
+              "label": "GS #45 — Make your way to the south end of Kakariko Village, next to Impa’s House. From here, Hookshot onto the roof of the SKulltula House and then Hookshot onto the roof of Impa’s House.",
+              "ref": true,
+              "area": "Kakariko Village",
+              "refSec": "7.3",
+              "refTitle": "Hookshot Goodies",
+              "avail": "Hookshot",
+              "conf": "high"
+            },
+            {
+              "id": "hp22",
+              "cat": "hearts",
+              "label": "HP #22 — If you’ve been following the guide, we have collected more than 50 Gold Skulltulas at this point. You can enter the Skulltula House to claim your newest prize, a piece of heart.",
+              "ref": true,
+              "area": "Kakariko Village",
+              "refSec": "7.6",
+              "refTitle": "Post-Temple Goodies",
+              "avail": "",
+              "conf": "high"
             }
           ],
           "missable": true,
-          "missableNote": "GS #7–11 only appear at NIGHT — play Sun's Song first. GS #6 needs a bottle of bugs dropped on the grave-side soft soil.",
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Kakariko Village",
-                "items": [
-                  "GS #42 → §5.5 Fun With The Boomerang",
-                  "HP #21 → §7.3 Hookshot Goodies  (Hookshot)",
-                  "GS #45 → §7.3 Hookshot Goodies  (Hookshot)",
-                  "HP #22 → §7.6 Post-Temple Goodies"
-                ]
-              }
-            ]
-          }
+          "missableNote": "GS #7–11 only appear at NIGHT — play Sun's Song first. GS #6 needs a bottle of bugs dropped on the grave-side soft soil."
         },
         {
           "id": "s-3.3",
@@ -428,23 +569,43 @@
               "cat": "gs",
               "label": "GS #13 — Found on the outside of the corral at Lon Lon Ranch. The Skulltula is only seen at nighttime, where is it hanging out on the wooden board.",
               "conf": "high"
+            },
+            {
+              "id": "gs37",
+              "cat": "gs",
+              "label": "GS #37 — Once you enter Lon Lon Ranch at nighttime, you will find a Gold Skulltula on the window of the building on the left side. Defeat the spider and collect the token with the Boomerang.",
+              "ref": true,
+              "area": "Lon Lon Ranch",
+              "refSec": "5.5",
+              "refTitle": "Fun With The Boomerang",
+              "avail": "night · Boomerang",
+              "conf": "high"
+            },
+            {
+              "id": "gs38",
+              "cat": "gs",
+              "label": "GS #38 — At Lon Lon Ranch at nighttime, make your way to the far southwest side of the map. Higher up on the edge you will find a Skulltula.",
+              "ref": true,
+              "area": "Lon Lon Ranch",
+              "refSec": "5.5",
+              "refTitle": "Fun With The Boomerang",
+              "avail": "night",
+              "conf": "high"
+            },
+            {
+              "id": "hp25",
+              "cat": "hearts",
+              "label": "HP #25 — Place a bomb near a tree, northwest of Lon Lon Ranch to find a hidden grotto. Underground, jump into the water and dive down below to find a piece of heart at the bottom of the pond.",
+              "ref": true,
+              "area": "Lon Lon Ranch",
+              "refSec": "8.1",
+              "refTitle": "Lake Hylia",
+              "avail": "bomb",
+              "conf": "high"
             }
           ],
           "missable": true,
-          "missableNote": "GS #13 is night-only (on the corral fence).",
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Lon Lon Ranch",
-                "items": [
-                  "GS #37 → §5.5 Fun With The Boomerang  (night · Boomerang)",
-                  "GS #38 → §5.5 Fun With The Boomerang  (night)",
-                  "HP #25 → §8.1 Lake Hylia  (bomb)"
-                ]
-              }
-            ]
-          }
+          "missableNote": "GS #13 is night-only (on the corral fence)."
         },
         {
           "id": "s-3.4",
@@ -469,21 +630,41 @@
               "cat": "gs",
               "label": "GS #14 — At the bottom of Gerudo Valley you will find a Gerudo, a Cow, and a soft soil location. Drop some bugs into the soil location to get the Skulltula.",
               "conf": "high"
+            },
+            {
+              "id": "gs39",
+              "cat": "gs",
+              "label": "GS #39 — At the west end of Hyrule Field, near the entrance of Gerudo Valley, you will find a circle of rocks. The Shard of Agony will chime if you stand in the middle.",
+              "ref": true,
+              "area": "Gerudo Valley",
+              "refSec": "5.5",
+              "refTitle": "Fun With The Boomerang",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "gs40",
+              "cat": "gs",
+              "label": "GS #40 — Once you enter Gerudo Valley, walk forward and you’ll come to a wooden ramp. If you turn to the right, there is some water coming out of a hole in the wall.",
+              "ref": true,
+              "area": "Gerudo Valley",
+              "refSec": "5.5",
+              "refTitle": "Fun With The Boomerang",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "gs88",
+              "cat": "gs",
+              "label": "GS #88 — In Gerudo Valley, once you cross the bridge, there is an archway just to the left. Look up on one of the sides at nighttime to find the Skulltula.",
+              "ref": true,
+              "area": "Gerudo Valley",
+              "refSec": "13.1",
+              "refTitle": "Rescuing the Carpenters",
+              "avail": "night",
+              "conf": "high"
             }
-          ],
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Gerudo Valley",
-                "items": [
-                  "GS #39 → §5.5 Fun With The Boomerang",
-                  "GS #40 → §5.5 Fun With The Boomerang",
-                  "GS #88 → §13.1 Rescuing the Carpenters  (night)"
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "s-3.5",
@@ -508,25 +689,65 @@
               "cat": "gs",
               "label": "GS #16 — At Lake Hylia, on the island at the southeast corner of the map. This Gold Skulltula will only appear at nighttime.",
               "conf": "high"
+            },
+            {
+              "id": "hp14",
+              "cat": "hearts",
+              "label": "HP #14 — In the fenced area at the southwest portion of Hyrule Field, near the entrance of Lake Hylia. Drop a bomb to find an underground grotto where there is a Business Scrub that will sell you the heart piece for 10 rupees.",
+              "ref": true,
+              "area": "Lake Hylia",
+              "refSec": "4.4",
+              "refTitle": "Fun With Bombs",
+              "avail": "bomb",
+              "conf": "high"
+            },
+            {
+              "id": "gs41",
+              "cat": "gs",
+              "label": "GS #41 — At the northwest side of Lake Hylia, walk onto the bridge near the Lakeside Laboratory. At nighttime look at the building and you’ll find a Skulltula.",
+              "ref": true,
+              "area": "Lake Hylia",
+              "refSec": "5.5",
+              "refTitle": "Fun With The Boomerang",
+              "avail": "night",
+              "conf": "high"
+            },
+            {
+              "id": "hp23",
+              "cat": "hearts",
+              "label": "HP #23 — Just outside the Lakeside Laboratory at Lake Hylia, we want to get on top of the building. You can do so by riding the Magic Bean Plant that has grown, or by playing the Scarecrow’s Song and using the Hookshot.",
+              "ref": true,
+              "area": "Lake Hylia",
+              "refSec": "8.1",
+              "refTitle": "Lake Hylia",
+              "avail": "bean · Hookshot",
+              "conf": "high"
+            },
+            {
+              "id": "hp24",
+              "cat": "hearts",
+              "label": "HP #24 — Inside the Lakeside Laboratory, jump into the small pool of water. Dive down all the way to the bottom of the tank.",
+              "ref": true,
+              "area": "Lake Hylia",
+              "refSec": "8.1",
+              "refTitle": "Lake Hylia",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "gs71",
+              "cat": "gs",
+              "label": "GS #71 — Enter the Lakeside Laboratory and use the Iron Boots to sink down to the bottom of the small pool. Roll into the wooden crate here and and a Skulltula will pop out.",
+              "ref": true,
+              "area": "Lake Hylia",
+              "refSec": "10.1",
+              "refTitle": "Enter the Water Temple",
+              "avail": "Iron Boots",
+              "conf": "high"
             }
           ],
           "missable": true,
-          "missableNote": "SET UP THE SCARECROW'S SONG AS A CHILD: sing any 8-note tune to Bonooru the scarecrow at Lake Hylia now. As an adult you replay it to summon Pierre — it's required/handy for HP #23, GS #61, GS #77 and other out-of-reach spots. GS #16 is night-only.",
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Lake Hylia",
-                "items": [
-                  "HP #14 → §4.4 Fun With Bombs  (bomb)",
-                  "GS #41 → §5.5 Fun With The Boomerang  (night)",
-                  "HP #23 → §8.1 Lake Hylia  (bean · Hookshot)",
-                  "HP #24 → §8.1 Lake Hylia",
-                  "GS #71 → §10.1 Enter the Water Temple  (Iron Boots)"
-                ]
-              }
-            ]
-          }
+          "missableNote": "SET UP THE SCARECROW'S SONG AS A CHILD: sing any 8-note tune to Bonooru the scarecrow at Lake Hylia now. As an adult you replay it to summon Pierre — it's required/handy for HP #23, GS #61, GS #77 and other out-of-reach spots. GS #16 is night-only."
         },
         {
           "id": "s-3.5b",
@@ -599,22 +820,32 @@
               "label": "Bullet Bag upgrade #2 (40→50) — In the Lost Woods, hit the target repeatedly (100 pts each) until a Deku Scrub appears and gifts a Bullet Bag upgrade (40 to 50).",
               "conf": "high",
               "added": true
+            },
+            {
+              "id": "gs48",
+              "cat": "gs",
+              "label": "GS #48 — At nighttime in the Meadow of the Lost Woods. Take the Magic Bean Plant ride up to the top and slash away at the Gold Skulltula.",
+              "ref": true,
+              "area": "Sacred Forest Meadow",
+              "refSec": "7.4",
+              "refTitle": "Return to the Forest",
+              "avail": "night · bean",
+              "conf": "high"
+            },
+            {
+              "id": "gs49",
+              "cat": "gs",
+              "label": "GS #49 — At nighttime in the Sacred Forest Meadow, climb up the ladder to the higher ledge and look up at the east wall. There is a gold skulltula that you can defeat with the Hookshot.",
+              "ref": true,
+              "area": "Sacred Forest Meadow",
+              "refSec": "7.4",
+              "refTitle": "Return to the Forest",
+              "avail": "night · Hookshot",
+              "conf": "high"
             }
           ],
           "missable": true,
-          "missableNote": "GS #17 (Kokiri Forest) is night-only.",
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Sacred Forest Meadow",
-                "items": [
-                  "GS #48 → §7.4 Return to the Forest  (night · bean)",
-                  "GS #49 → §7.4 Return to the Forest  (night · Hookshot)"
-                ]
-              }
-            ]
-          }
+          "missableNote": "GS #17 (Kokiri Forest) is night-only."
         },
         {
           "id": "s-3.7",
@@ -664,29 +895,74 @@
               "cat": "gs",
               "label": "GS #21 — Just outside of Dodongo’s Cavern, drop some bugs into the Soft Soil location and a Skulltula will pop out.",
               "conf": "high"
+            },
+            {
+              "id": "gs26",
+              "cat": "gs",
+              "label": "GS #26 — Once you enter Goron City, bomb the three boulders on the left. This leads to a room where you should bomb the boulders along the right path.",
+              "ref": true,
+              "area": "Goron City",
+              "refSec": "4.3",
+              "refTitle": "Atop Death Mountain",
+              "avail": "bomb",
+              "conf": "high"
+            },
+            {
+              "id": "gs56",
+              "cat": "gs",
+              "label": "GS #56 — Once you enter Goron City, walk across the tightropes that are straight ahead. On the backside of the pedestal located at the top of the City, you will find a Gold Skulltula.",
+              "ref": true,
+              "area": "Goron City",
+              "refSec": "8.2",
+              "refTitle": "Death Mountain Revisited",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "hp12",
+              "cat": "hearts",
+              "label": "HP #12 — After flying down Death Mountain using the owl, carefully drop down onto the edge to the east. Enter the house here to find the Piece of Heart.",
+              "ref": true,
+              "area": "Death Mountain Trail",
+              "refSec": "4.3",
+              "refTitle": "Atop Death Mountain",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "gs25",
+              "cat": "gs",
+              "label": "GS #25 — On the trail between Kakariko Village and Dodongo’s Cavern, there is a bombable wall on the side where you can hear a Gold Skulltula. Bomb the wall and defeat the skulltula for the token.",
+              "ref": true,
+              "area": "Death Mountain Trail",
+              "refSec": "4.3",
+              "refTitle": "Atop Death Mountain",
+              "avail": "bomb",
+              "conf": "high"
+            },
+            {
+              "id": "gs63",
+              "cat": "gs",
+              "label": "GS #63 — Located on the Death Mountain Trail, in the area where there were falling boulders as a child. There are three rocks on this trail that you cannot break with bombs.",
+              "ref": true,
+              "area": "Death Mountain Trail",
+              "refSec": "8.5",
+              "refTitle": "Fun with the Hammer",
+              "avail": "child · bomb",
+              "conf": "high"
+            },
+            {
+              "id": "gs64",
+              "cat": "gs",
+              "label": "GS #64 — Located on the Death Mountain Trail, near the entrance to Goron City. There is boulder located just above Dodongo’s Cavern and you’ll need the Megaton Hammer to break it.",
+              "ref": true,
+              "area": "Death Mountain Trail",
+              "refSec": "8.5",
+              "refTitle": "Fun with the Hammer",
+              "avail": "",
+              "conf": "high"
             }
-          ],
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Goron City",
-                "items": [
-                  "GS #26 → §4.3 Atop Death Mountain  (bomb)",
-                  "GS #56 → §8.2 Death Mountain Revisited"
-                ]
-              },
-              {
-                "area": "Death Mountain Trail",
-                "items": [
-                  "HP #12 → §4.3 Atop Death Mountain",
-                  "GS #25 → §4.3 Atop Death Mountain  (bomb)",
-                  "GS #63 → §8.5 Fun with the Hammer  (child · bomb)",
-                  "GS #64 → §8.5 Fun with the Hammer"
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "s-4.2",
@@ -718,39 +994,59 @@
               "cat": "gs",
               "label": "GS #24 — In the room with the Fire Keese towards the end of the dungeon there is a bombable wall at the north end of the room. Blast it open and you’ll find a Gold Skulltula behind the armos statue.",
               "conf": "high"
+            },
+            {
+              "id": "gs44",
+              "cat": "gs",
+              "label": "GS #44 — The Gold Skulltula is located in Dodongo’s Cavern, within the room with the massive explodable staircase. However, you’ll have to go the long route to get this one.",
+              "ref": true,
+              "area": "Dodongo's Cavern",
+              "refSec": "5.5",
+              "refTitle": "Fun With The Boomerang",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "hp26",
+              "cat": "hearts",
+              "label": "HP #26 — At the entrance of Dodongo’s Cavern, you can ride the Magic Bean Plant up to get onto the higher ledge where a heart container is located. You could have actually gotten this as a Child with a strategy jump, but this is the intend.",
+              "ref": true,
+              "area": "Dodongo's Cavern",
+              "refSec": "8.2",
+              "refTitle": "Death Mountain Revisited",
+              "avail": "child · bean",
+              "conf": "high"
+            },
+            {
+              "id": "gs55",
+              "cat": "gs",
+              "label": "GS #55 — Re-enter Dodongo’s Cavern and make your way to the room at the southeast part of the main room. This is the room with the Baby Dodongo’s and if you pay close attention, you’ll notice Navi will fly up to a higher ledge and turn gre.",
+              "ref": true,
+              "area": "Dodongo's Cavern",
+              "refSec": "8.2",
+              "refTitle": "Death Mountain Revisited",
+              "avail": "",
+              "conf": "high"
             }
-          ],
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Dodongo's Cavern",
-                "items": [
-                  "GS #44 → §5.5 Fun With The Boomerang",
-                  "HP #26 → §8.2 Death Mountain Revisited  (child · bean)",
-                  "GS #55 → §8.2 Death Mountain Revisited"
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "s-4.3",
           "title": "4.3 Atop Death Mountain",
           "loc": "Death Mountain Summit / Crater",
-          "do": "Beat King Dodongo for Goron's Ruby; Magic Meter Great Fairy; bigger Bomb Bag, two Heart Pieces, three Skulltulas.",
+          "do": "Clear Dodongo's Cavern for the Goron's Ruby; Magic Meter Great Fairy; bigger Bomb Bag, two Heart Pieces, three Skulltulas.",
           "items": [
             {
               "id": "d-dodongo",
               "cat": "dungeon",
-              "label": "Dodongo's Cavern (cleared) — Defeat King Dodongo: drop a Bomb in his mouth as he inhales, then slash him (roll over his curled body to finish). Grab the Heart Container.",
+              "label": "Dodongo's Cavern (cleared) — Clear the dungeon and grab the Heart Container it leaves.",
               "conf": "high",
               "added": true
             },
             {
               "id": "goron-s-ruby",
               "cat": "sacred",
-              "label": "Goron's Ruby — Darunia awards the Goron's Ruby (Spiritual Stone of Fire) after you clear Dodongo's Cavern.",
+              "label": "Goron's Ruby — Received for clearing Dodongo's Cavern.",
               "conf": "high",
               "added": true
             },
@@ -797,20 +1093,30 @@
               "cat": "gs",
               "label": "GS #27 — At the very top of Death Mountain, enter the Death Mountain Crater and you’ll find a wooden crate. Roll into it to find a Gold Skulltula.",
               "conf": "high"
+            },
+            {
+              "id": "hp27",
+              "cat": "hearts",
+              "label": "HP #27 — Inside of the Death Mountain Crater, ride the Magic Bean Plant to get to the higher up volcano-like mountain to snag a heart piece.",
+              "ref": true,
+              "area": "Death Mountain Crater",
+              "refSec": "8.3",
+              "refTitle": "Death Mountain Crater",
+              "avail": "bean",
+              "conf": "high"
+            },
+            {
+              "id": "gs57",
+              "cat": "gs",
+              "label": "GS #57 — Once you have learned the Bolero of Fire, warp to the Death Mountain Crater as a child. Drop some bugs into the soft soil location to get the Skulltula to appear.",
+              "ref": true,
+              "area": "Death Mountain Crater",
+              "refSec": "8.3",
+              "refTitle": "Death Mountain Crater",
+              "avail": "child",
+              "conf": "high"
             }
-          ],
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Death Mountain Crater",
-                "items": [
-                  "HP #27 → §8.3 Death Mountain Crater  (bean)",
-                  "GS #57 → §8.3 Death Mountain Crater  (child)"
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "s-4.4",
@@ -899,24 +1205,54 @@
               "cat": "gs",
               "label": "GS #29 — At the end of Zora’s River, right near the waterfall, there is a ladder leading out of the water. At nighttime a Skulltula can be found here.",
               "conf": "high"
+            },
+            {
+              "id": "gs65",
+              "cat": "gs",
+              "label": "GS #65 — In Zora’s River, located high up on the southern wall. Ride the Magic Bean up to the large plateau in the center of the River.",
+              "ref": true,
+              "area": "Zora's River",
+              "refSec": "9.1",
+              "refTitle": "Zora's Domain Revisited",
+              "avail": "bean",
+              "conf": "high"
+            },
+            {
+              "id": "gs66",
+              "cat": "gs",
+              "label": "GS #66 — In Zora’s River, once you cross the small river, heading towards Zora’s Domain, if you look up high at the wall, you’ll find a Gold Skulltula. It is just out of reach from when you are standing on the ground.",
+              "ref": true,
+              "area": "Zora's River",
+              "refSec": "9.1",
+              "refTitle": "Zora's Domain Revisited",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "hp31",
+              "cat": "hearts",
+              "label": "HP #31 — At Zora’s River as a child, near the center of the map, step on the nearby log that sticks out into the water. Pull out your Ocarina to get five Frogs to appear.",
+              "ref": true,
+              "area": "Zora's River",
+              "refSec": "11.2",
+              "refTitle": "Return to Childhood",
+              "avail": "child",
+              "conf": "high"
+            },
+            {
+              "id": "hp32",
+              "cat": "hearts",
+              "label": "HP #32 — At Zora’s River as a child, when you meet the five frogs, play Zelda’s Lullaby, Saria’s Song, Epona’s Song, Sun’s Song, and the Song of Time. Each time one of the frogs will grow in size.",
+              "ref": true,
+              "area": "Zora's River",
+              "refSec": "11.2",
+              "refTitle": "Return to Childhood",
+              "avail": "child",
+              "conf": "high"
             }
           ],
           "missable": true,
-          "missableNote": "BUY ALL THE MAGIC BEANS — this salesman is the ONLY source, and beans planted now (as a child) grow into platforms you need as an adult for several Heart Pieces/Skulltulas. (The bean-salesman's own soft-soil patch is the one and only soft soil in the game with NO Gold Skulltula — don't waste bugs there.) GS #29 is night-only.",
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Zora's River",
-                "items": [
-                  "GS #65 → §9.1 Zora's Domain Revisited  (bean)",
-                  "GS #66 → §9.1 Zora's Domain Revisited",
-                  "HP #31 → §11.2 Return to Childhood  (child)",
-                  "HP #32 → §11.2 Return to Childhood  (child)"
-                ]
-              }
-            ]
-          }
+          "missableNote": "BUY ALL THE MAGIC BEANS — this salesman is the ONLY source, and beans planted now (as a child) grow into platforms you need as an adult for several Heart Pieces/Skulltulas. (The bean-salesman's own soft-soil patch is the one and only soft soil in the game with NO Gold Skulltula — don't waste bugs there.) GS #29 is night-only."
         },
         {
           "id": "s-5.2",
@@ -949,26 +1285,41 @@
               "cat": "gs",
               "label": "GS #30 — At the southeast portion of Zora’s Fountain, roll into the lone tree here and the Skulltula will pop out. If you look against the wall here you’ll find two boulders.",
               "conf": "high"
+            },
+            {
+              "id": "gs67",
+              "cat": "gs",
+              "label": "GS #67 — Found inside of Zora’s Domain, there is a Skulltula near the top of the frozen waterfall. Go through King Zora’s Chamber and walk right up to the edge.",
+              "ref": true,
+              "area": "Zora's Domain",
+              "refSec": "9.1",
+              "refTitle": "Zora's Domain Revisited",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "hp30",
+              "cat": "hearts",
+              "label": "HP #30 — Located at the very bottom of Zora’s Fountain. Use the Iron Boots to reach the ground floor and collect the heart piece.",
+              "ref": true,
+              "area": "Zora's Fountain",
+              "refSec": "9.3",
+              "refTitle": "Zora Tunic",
+              "avail": "Iron Boots",
+              "conf": "high"
+            },
+            {
+              "id": "gs100",
+              "cat": "gs",
+              "label": "GS #100 — At nighttime, make your way to Zora’s Fountain and then head on over to the southeast corner, where the Great Fairy was located. There is a lone silver boulder here and now that you have the Silver Gauntlets, you can lift it up.",
+              "ref": true,
+              "area": "Zora's Fountain",
+              "refSec": "14.2",
+              "refTitle": "The Last Skulltula",
+              "avail": "night · Silver Gauntlets",
+              "conf": "high"
             }
-          ],
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Zora's Domain",
-                "items": [
-                  "GS #67 → §9.1 Zora's Domain Revisited"
-                ]
-              },
-              {
-                "area": "Zora's Fountain",
-                "items": [
-                  "HP #30 → §9.3 Zora Tunic  (Iron Boots)",
-                  "GS #100 → §14.2 The Last Skulltula  (night · Silver Gauntlets)"
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "s-5.3",
@@ -1013,19 +1364,19 @@
           "id": "s-5.4",
           "title": "5.4 Spiritual Stone of Water",
           "loc": "Jabu-Jabu / Zora's Fountain",
-          "do": "Beat Barinade for Zora's Sapphire; GS #35; grab Farore's Wind from the Zora's Fountain Great Fairy.",
+          "do": "Clear Jabu-Jabu for Zora's Sapphire; GS #35; grab Farore's Wind from the Zora's Fountain Great Fairy.",
           "items": [
             {
               "id": "d-jabu",
               "cat": "dungeon",
-              "label": "Inside Jabu-Jabu's Belly (cleared) — Defeat Barinade: stun the jellyfish core with the Boomerang, then slash it. Grab the Heart Container.",
+              "label": "Inside Jabu-Jabu's Belly (cleared) — Clear the dungeon and grab the Heart Container it leaves.",
               "conf": "high",
               "added": true
             },
             {
               "id": "zora-s-sapphire",
               "cat": "sacred",
-              "label": "Zora's Sapphire — Princess Ruto personally gives you Zora's Sapphire (Spiritual Stone of Water) after Barinade falls.",
+              "label": "Zora's Sapphire — Received for clearing Jabu-Jabu.",
               "conf": "high",
               "added": true
             },
@@ -1132,14 +1483,14 @@
             {
               "id": "song-time",
               "cat": "song",
-              "label": "Song of Time — Zelda teaches it telepathically; play it at the Door of Time altar (with all 3 Spiritual Stones placed) to open the way to the Master Sword.",
+              "label": "Song of Time — Play it at the Door of Time altar (with all 3 Spiritual Stones placed) to open it.",
               "conf": "high",
               "added": true
             },
             {
               "id": "i-ocarina-time",
               "cat": "item",
-              "label": "Ocarina of Time — Zelda throws the Ocarina of Time to you across the castle moat as she flees Ganondorf with Impa.",
+              "label": "Ocarina of Time — Received as you leave Hyrule Castle.",
               "conf": "high",
               "added": true
             }
@@ -1180,19 +1531,19 @@
           "id": "s-6.3",
           "title": "6.3 Awaken the Hero of Time",
           "loc": "Temple of Time",
-          "do": "Pull the Master Sword → become adult; Rauru gives the Light Medallion. (You can return to childhood anytime via the pedestal.)",
+          "do": "Pull the Master Sword → become adult; you receive the Light Medallion. (Return to childhood anytime via the pedestal.)",
           "items": [
             {
               "id": "master-sword",
               "cat": "equip",
-              "label": "Master Sword — Pull the Master Sword from the Pedestal of Time (after opening the Door of Time) — it sends you 7 years ahead to adult Link.",
+              "label": "Master Sword — Pull it from the Pedestal of Time in the Temple of Time to become an adult; replace it at the pedestal anytime to switch between child and adult.",
               "conf": "high",
               "added": true
             },
             {
               "id": "light-medallion",
               "cat": "sacred",
-              "label": "Light Medallion — Rauru, Sage of Light, awards it in the Chamber of Sages the moment you first awaken as an adult.",
+              "label": "Light Medallion — Received automatically the first time you become an adult.",
               "conf": "high",
               "added": true
             }
@@ -1210,7 +1561,7 @@
           "id": "s-7.1",
           "title": "7.1 Getting Epona",
           "loc": "Lon Lon Ranch",
-          "do": "Beat Ingo's horse race to win Epona (fast Hyrule Field travel via Epona's Song).",
+          "do": "Win the ranch horse race to claim Epona (fast Hyrule Field travel via Epona's Song).",
           "items": []
         },
         {
@@ -1363,14 +1714,14 @@
             {
               "id": "d-forest",
               "cat": "dungeon",
-              "label": "Forest Temple (cleared) — Defeat Phantom Ganon: knock his energy orb back and forth until it hits him, then arrow the real galloping portrait.",
+              "label": "Forest Temple (cleared) — Clear the dungeon and grab the Heart Container it leaves.",
               "conf": "high",
               "added": true
             },
             {
               "id": "md-forest",
               "cat": "sacred",
-              "label": "Forest Medallion — Saria, Sage of Forest, awards the Forest Medallion after Phantom Ganon falls.",
+              "label": "Forest Medallion — Awarded for clearing the Forest Temple.",
               "conf": "high",
               "added": true
             },
@@ -1463,7 +1814,7 @@
             {
               "id": "goron-tunic",
               "cat": "equip",
-              "label": "Goron Tunic — Talk to 'Link' the Goron (Darunia's son) in Goron City; after you hear both of his tales he awards the heat-proof Goron Tunic (also buyable in the Goron Shop).",
+              "label": "Goron Tunic — Talk to the Goron child in Goron City (in Darunia's old room) for the heat-proof Goron Tunic; also sold in the Goron Shop.",
               "conf": "high",
               "added": true
             },
@@ -1558,7 +1909,7 @@
             {
               "id": "gs62",
               "cat": "gs",
-              "label": "GS #62 — In the room just before the second battle with the Flare Dancer, block all the Floor Tiles and defeat the Like-Like. The skulltula is found on the back wall.",
+              "label": "GS #62 — In the room just before the second mini-boss fight, block all the Floor Tiles and defeat the Like-Like. The skulltula is found on the back wall.",
               "conf": "high"
             }
           ],
@@ -1574,14 +1925,14 @@
             {
               "id": "d-fire",
               "cat": "dungeon",
-              "label": "Fire Temple (cleared) — Defeat Volvagia: smash the dragon with the Megaton Hammer as it surfaces from the holes, then strike.",
+              "label": "Fire Temple (cleared) — Clear the dungeon and grab the Heart Container it leaves.",
               "conf": "high",
               "added": true
             },
             {
               "id": "md-fire",
               "cat": "sacred",
-              "label": "Fire Medallion — Darunia, Sage of Fire, awards the Fire Medallion after Volvagia falls.",
+              "label": "Fire Medallion — Awarded for clearing the Fire Temple.",
               "conf": "high",
               "added": true
             },
@@ -1645,22 +1996,52 @@
               "cat": "gs",
               "label": "GS #67 — Found inside of Zora’s Domain, there is a Skulltula near the top of the frozen waterfall. Go through King Zora’s Chamber and walk right up to the edge.",
               "conf": "high"
+            },
+            {
+              "id": "hp29",
+              "cat": "hearts",
+              "label": "HP #29 — In the Ice Cavern in the room with the Compass, a piece of heart can be found within a red block of ice. Use Blue Fire to melt it and snag the heart piece.",
+              "ref": true,
+              "area": "Ice Cavern",
+              "refSec": "9.2",
+              "refTitle": "Ice Cavern",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "gs68",
+              "cat": "gs",
+              "label": "GS #68 — In the Ice Cavern, make your way to the first spinning blade room with the Silver Rupees. The skulltula is located high up on the wall, just above one of the silver rupees.",
+              "ref": true,
+              "area": "Ice Cavern",
+              "refSec": "9.2",
+              "refTitle": "Ice Cavern",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "gs69",
+              "cat": "gs",
+              "label": "GS #69 — In the Ice Cavern in the room with the Compass, the Gold Skulltula is hidden up on a higher pillar. Use the Hookshot to grab the skulltula token.",
+              "ref": true,
+              "area": "Ice Cavern",
+              "refSec": "9.2",
+              "refTitle": "Ice Cavern",
+              "avail": "Hookshot",
+              "conf": "high"
+            },
+            {
+              "id": "gs70",
+              "cat": "gs",
+              "label": "GS #70 — In the large block pushing room of the Ice Cavern, the Gold Skulltula is found waiting on one of the higher walls. The goal in this room is obviously to get all the Silver Rupees.",
+              "ref": true,
+              "area": "Ice Cavern",
+              "refSec": "9.2",
+              "refTitle": "Ice Cavern",
+              "avail": "",
+              "conf": "high"
             }
-          ],
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Ice Cavern",
-                "items": [
-                  "HP #29 → §9.2 Ice Cavern",
-                  "GS #68 → §9.2 Ice Cavern",
-                  "GS #69 → §9.2 Ice Cavern  (Hookshot)",
-                  "GS #70 → §9.2 Ice Cavern"
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "s-9.2",
@@ -1671,7 +2052,7 @@
             {
               "id": "iron-boots",
               "cat": "equip",
-              "label": "Iron Boots — The chest that appears after you beat the White Wolfos mini-boss in the Ice Cavern.",
+              "label": "Iron Boots — The chest that appears after the Ice Cavern's mini-boss room.",
               "conf": "high",
               "added": true
             },
@@ -1786,26 +2167,26 @@
           "id": "s-10.2",
           "title": "10.2 Water Temple",
           "loc": "Water Temple",
-          "do": "Longshot, Water Medallion, five Skulltulas; beat Dark Link and Morpha.",
+          "do": "Longshot, Water Medallion, five Skulltulas.",
           "items": [
             {
               "id": "longshot",
               "cat": "item",
-              "label": "Longshot — The Water Temple's dungeon item — the chest in the upper-west room by Dark Link's arena; doubles the Hookshot's reach.",
+              "label": "Longshot — The Water Temple's dungeon item: the chest in the upper-west room (past the mini-boss arena); doubles the Hookshot's reach.",
               "conf": "high",
               "added": true
             },
             {
               "id": "d-water",
               "cat": "dungeon",
-              "label": "Water Temple (cleared) — Defeat Morpha: Longshot its nucleus out of the water and slash it before it re-submerges.",
+              "label": "Water Temple (cleared) — Clear the dungeon and grab the Heart Container it leaves.",
               "conf": "high",
               "added": true
             },
             {
               "id": "md-water",
               "cat": "sacred",
-              "label": "Water Medallion — Ruto, Sage of Water, awards the Water Medallion after Morpha falls.",
+              "label": "Water Medallion — Awarded for clearing the Water Temple.",
               "conf": "high",
               "added": true
             },
@@ -1870,7 +2251,7 @@
       "id": "ch11",
       "title": "Chapter 11 · Within The Well",
       "era": "child",
-      "blurb": "Kakariko burns; learn Nocturne. Travel back to childhood for the frog Heart Pieces and the Bottom of the Well (Lens of Truth).",
+      "blurb": "Return to Kakariko and learn Nocturne. Travel back to childhood for the frog Heart Pieces and the Bottom of the Well (Lens of Truth).",
       "steps": [
         {
           "id": "s-11.1",
@@ -1881,14 +2262,14 @@
             {
               "id": "song-nocturne",
               "cat": "song",
-              "label": "Nocturne of Shadow — Sheik teaches the Nocturne of Shadow in burning Kakariko (by the Graveyard) right after you clear the Water Temple.",
+              "label": "Nocturne of Shadow — Taught by Sheik by the Kakariko Graveyard after you clear the Water Temple.",
               "conf": "high",
               "added": true
             },
             {
               "id": "song-storms",
               "cat": "song",
-              "label": "Song of Storms — Learn it from Guru-Guru, the windmill man in Kakariko (as an adult, he's ranting about the well).",
+              "label": "Song of Storms — Learn it from Guru-Guru, the windmill man in Kakariko (as an adult).",
               "conf": "high",
               "added": true
             }
@@ -2004,7 +2385,7 @@
             {
               "id": "hover-boots",
               "cat": "equip",
-              "label": "Hover Boots — The Shadow Temple's dungeon item (chest past the second Dead Hand) — hover briefly across gaps.",
+              "label": "Hover Boots — The Shadow Temple's dungeon item (chest past the second mini-boss); hover briefly across gaps.",
               "conf": "high",
               "added": true
             },
@@ -2044,19 +2425,19 @@
           "id": "s-12.3",
           "title": "12.3 Sage of Shadow",
           "loc": "Shadow Temple (boss)",
-          "do": "Beat Bongo Bongo for the Shadow Medallion.",
+          "do": "Clear the Shadow Temple for the Shadow Medallion.",
           "items": [
             {
               "id": "d-shadow",
               "cat": "dungeon",
-              "label": "Shadow Temple (cleared) — Defeat Bongo Bongo: stun its hands with arrows (use the Lens), then strike the eye when it charges.",
+              "label": "Shadow Temple (cleared) — Clear the dungeon and grab the Heart Container it leaves.",
               "conf": "high",
               "added": true
             },
             {
               "id": "md-shadow",
               "cat": "sacred",
-              "label": "Shadow Medallion — Impa, Sage of Shadow, awards the Shadow Medallion after Bongo Bongo falls.",
+              "label": "Shadow Medallion — Awarded for clearing the Shadow Temple.",
               "conf": "high",
               "added": true
             }
@@ -2094,22 +2475,52 @@
               "cat": "gs",
               "label": "GS #88 — In Gerudo Valley, once you cross the bridge, there is an archway just to the left. Look up on one of the sides at nighttime to find the Skulltula.",
               "conf": "high"
+            },
+            {
+              "id": "hp34",
+              "cat": "hearts",
+              "label": "HP #34 — At the top of Gerudo Fortress, there is a treasure chest in the distance. If you go right up to the edge, you can reach it with your Longshot.",
+              "ref": true,
+              "area": "Gerudo Fortress",
+              "refSec": "13.2",
+              "refTitle": "Gerudo Goodies",
+              "avail": "Longshot",
+              "conf": "high"
+            },
+            {
+              "id": "hp35",
+              "cat": "hearts",
+              "label": "HP #35 — At back of Gerudo Fortress, jump on your horse to play the archery game. If you successfully score more than 1000 points, you will be rewarded with a piece of heart.",
+              "ref": true,
+              "area": "Gerudo Fortress",
+              "refSec": "13.2",
+              "refTitle": "Gerudo Goodies",
+              "avail": "",
+              "conf": "high"
+            },
+            {
+              "id": "gs89",
+              "cat": "gs",
+              "label": "GS #89 — Located near the top of Gerudo Fortress, against back wall. The skulltula is only there at nighttime.",
+              "ref": true,
+              "area": "Gerudo Fortress",
+              "refSec": "13.2",
+              "refTitle": "Gerudo Goodies",
+              "avail": "night",
+              "conf": "high"
+            },
+            {
+              "id": "gs90",
+              "cat": "gs",
+              "label": "GS #90 — At nighttime in the Gerudo Fortress, head to the back area where the archery game is located. Located on the target at the far end of the area is a Gold Skulltula.",
+              "ref": true,
+              "area": "Gerudo Fortress",
+              "refSec": "13.2",
+              "refTitle": "Gerudo Goodies",
+              "avail": "night",
+              "conf": "high"
             }
-          ],
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Gerudo Fortress",
-                "items": [
-                  "HP #34 → §13.2 Gerudo Goodies  (Longshot)",
-                  "HP #35 → §13.2 Gerudo Goodies",
-                  "GS #89 → §13.2 Gerudo Goodies  (night)",
-                  "GS #90 → §13.2 Gerudo Goodies  (night)"
-                ]
-              }
-            ]
-          }
+          ]
         },
         {
           "id": "s-13.2",
@@ -2201,30 +2612,65 @@
               "cat": "gs",
               "label": "GS #94 — Near the Oasis at the south end of the Desert Colossus, you’ll find the Skulltula at the top of one of the Palm Trees at nighttime. Use the Longshot to defeat it and grab the token.",
               "conf": "high"
+            },
+            {
+              "id": "gs95",
+              "cat": "gs",
+              "label": "GS #95 — As a child in the Spirit Temple, the Gold Skulltula is located in the room found early on with the five silver rupees and wallmaster. Grab the rupees to drop the bridge and then use your Boomerang to snag the token from the Skullt.",
+              "ref": true,
+              "area": "Spirit Temple",
+              "refSec": "13.4",
+              "refTitle": "Spirit Temple (Child)",
+              "avail": "child · Boomerang",
+              "conf": "high"
+            },
+            {
+              "id": "gs96",
+              "cat": "gs",
+              "label": "GS #96 — As a child in the Spirit Temple, the Skulltula is located in the room with the Bombchu puzzle. Once you enter the room, climb the wall where there are two regular skulltulas.",
+              "ref": true,
+              "area": "Spirit Temple",
+              "refSec": "13.4",
+              "refTitle": "Spirit Temple (Child)",
+              "avail": "child · bomb",
+              "conf": "high"
+            },
+            {
+              "id": "gs97",
+              "cat": "gs",
+              "label": "GS #97 — As a child in the Spirit Temple, the Skulltula is located in the room just before the mini-boss room. In this narrow hallway, turn around and look at the door you came through and the Skulltula is located just above.",
+              "ref": true,
+              "area": "Spirit Temple",
+              "refSec": "13.4",
+              "refTitle": "Spirit Temple (Child)",
+              "avail": "child",
+              "conf": "high"
+            },
+            {
+              "id": "gs98",
+              "cat": "gs",
+              "label": "GS #98 — As an adult in the Spirit Temple, the Skulltula is located in the room with rolling boulders and five silver rupees. Play the Song of Time in front of time block to find the skulltula hidden right behind.",
+              "ref": true,
+              "area": "Spirit Temple",
+              "refSec": "13.5",
+              "refTitle": "Spirit Temple (Adult)",
+              "avail": "adult",
+              "conf": "high"
+            },
+            {
+              "id": "gs99",
+              "cat": "gs",
+              "label": "GS #99 — In the large Colossus room where the giant statue, climb up to the top on the west of the room. Navi will float over to a platform in the distance, so play the Scarecrow’s Song.",
+              "ref": true,
+              "area": "Desert Colossus",
+              "refSec": "13.5",
+              "refTitle": "Spirit Temple (Adult)",
+              "avail": "Scarecrow's Song",
+              "conf": "high"
             }
           ],
           "missable": true,
-          "missableNote": "PLANT A MAGIC BEAN at the Desert Colossus (needed to ride to HP #36 and GS #93). GS #92 is a CHILD soft-soil drop outside the temple; #93/#94 are night-only (bean ride / palm tree).",
-          "areaNote": {
-            "added": true,
-            "groups": [
-              {
-                "area": "Spirit Temple",
-                "items": [
-                  "GS #95 → §13.4 Spirit Temple (Child)  (child · Boomerang)",
-                  "GS #96 → §13.4 Spirit Temple (Child)  (child · bomb)",
-                  "GS #97 → §13.4 Spirit Temple (Child)  (child)",
-                  "GS #98 → §13.5 Spirit Temple (Adult)  (adult)"
-                ]
-              },
-              {
-                "area": "Desert Colossus",
-                "items": [
-                  "GS #99 → §13.5 Spirit Temple (Adult)  (Scarecrow's Song)"
-                ]
-              }
-            ]
-          }
+          "missableNote": "PLANT A MAGIC BEAN at the Desert Colossus (needed to ride to HP #36 and GS #93). GS #92 is a CHILD soft-soil drop outside the temple; #93/#94 are night-only (bean ride / palm tree)."
         },
         {
           "id": "s-13.4",
@@ -2254,7 +2700,7 @@
             {
               "id": "gs97",
               "cat": "gs",
-              "label": "GS #97 — As a child in the Spirit Temple, the Skulltula is located in the room just before the Iron Knuckle battle. In this narrow hallway, turn around and look at the door you came through and the Skulltula is located just above.",
+              "label": "GS #97 — As a child in the Spirit Temple, the Skulltula is located in the room just before the mini-boss room. In this narrow hallway, turn around and look at the door you came through and the Skulltula is located just above.",
               "conf": "high"
             }
           ],
@@ -2265,7 +2711,7 @@
           "id": "s-13.5",
           "title": "13.5 Spirit Temple (Adult)",
           "loc": "Spirit Temple",
-          "do": "Return as an ADULT for the Mirror Shield; GS #98, #99; beat Twinrova.",
+          "do": "Return as an ADULT for the Mirror Shield; GS #98, #99; then clear the dungeon.",
           "items": [
             {
               "id": "mirror-shield",
@@ -2292,19 +2738,19 @@
           "id": "s-13.6",
           "title": "13.6 Sage of Spirit",
           "loc": "Spirit Temple (boss)",
-          "do": "Twinrova down → Spirit Medallion.",
+          "do": "Clear the Spirit Temple → Spirit Medallion.",
           "items": [
             {
               "id": "d-spirit",
               "cat": "dungeon",
-              "label": "Spirit Temple (cleared) — Defeat Twinrova: catch each witch's fire or ice with the Mirror Shield until it's charged, then fire it back; finish them with your sword.",
+              "label": "Spirit Temple (cleared) — Clear the dungeon and grab the Heart Container it leaves.",
               "conf": "high",
               "added": true
             },
             {
               "id": "md-spirit",
               "cat": "sacred",
-              "label": "Spirit Medallion — Nabooru, Sage of Spirit, awards the Spirit Medallion after Twinrova falls.",
+              "label": "Spirit Medallion — Awarded for clearing the Spirit Temple.",
               "conf": "high",
               "added": true
             }
@@ -2327,7 +2773,7 @@
             {
               "id": "light-arrows",
               "cat": "item",
-              "label": "Light Arrows — Princess Zelda gives them to you at the Temple of Time, just before Ganondorf captures her.",
+              "label": "Light Arrows — Received at the Temple of Time.",
               "conf": "high",
               "added": true
             }
@@ -2368,7 +2814,7 @@
           "id": "s-14.4",
           "title": "14.4 Ganon's Castle",
           "loc": "Ganon's Castle",
-          "do": "Golden Gauntlets; the moat Great Fairy gives Double Defense; beat Ganondorf & Ganon.",
+          "do": "Golden Gauntlets; the moat Great Fairy gives Double Defense; then finish the game.",
           "items": [
             {
               "id": "up-golden-gauntlets",
@@ -2387,7 +2833,7 @@
             {
               "id": "d-ganon",
               "cat": "dungeon",
-              "label": "Ganon's Castle (cleared) — Clear the six elemental trials (Light Arrows needed), climb the tower, beat Ganondorf, then Ganon. Game complete at 100%.",
+              "label": "Ganon's Castle (cleared) — Clear the castle's six trials (Light Arrows needed), climb the tower, and finish the game at 100%.",
               "conf": "high",
               "added": true
             }
