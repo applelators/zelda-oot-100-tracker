@@ -2,7 +2,7 @@
   "meta": {
     "game": "The Legend of Zelda: Ocarina of Time (N64 100% definition)",
     "subtitle": "Switch 2 remake — midnight-launch one-sitting 100% binge route",
-    "version": "0.8.0",
+    "version": "0.8.1",
     "scope": "Structured to mirror the Zelda Dungeon walkthrough exactly — same 14 chapters and numbered sections, same path. 36 Heart Pieces, 100 Gold Skulltulas (both in Zelda Dungeon's collection-order numbering), 12 songs, all equipment/items/upgrades, 4 bottles, 6 Great Fairies, 3 Spiritual Stones, 6 Medallions, every dungeon.",
     "confidencePolicy": "Chapters, sections, path order, collectible placement and ALL missable/time-sensitive callouts are taken from the Zelda Dungeon walkthrough. Follow top to bottom and use the ⚠ missable notes. Trust the in-game counters over any wording.",
     "remakeNote": "Built pre-release on the original N64 baseline. Patch in remake-specific changes on launch night.",
@@ -41,7 +41,8 @@
         "desc": "The ONE real deadline in the game: finish every collectible before committing to this."
       }
     },
-    "missablesNote": "Nothing in OoT is permanently missable — you can swap child/adult and revisit every area until the end. The old blanket 'missable' tag is replaced by honest chips (night-only, prep-ahead, timed-retryable, child-only) plus a single real 'point of no return' at §14.4 (Ganon's Castle)."
+    "missablesNote": "Nothing in OoT is permanently missable — you can swap child/adult and revisit every area until the end. The old blanket 'missable' tag is replaced by honest chips (night-only, prep-ahead, timed-retryable, child-only) plus a single real 'point of no return' at §14.4 (Ganon's Castle).",
+    "auditNote": "v0.8.1 completeness audit: added the 2 permanent items that were missing — Deku Nut capacity upgrade #1 (Lost Woods Business Scrub, §4.4) and the Stone/Shard of Agony (20-token House of Skulltula reward, §4.3). Deliberately NOT added: Fairy Ocarina (replaced by the Ocarina of Time), Giant's Knife (breakable, superseded by Biggoron's Sword). Watch for the 3DS-only Tycoon's Wallet on the remake at launch."
   },
   "categories": {
     "hearts": {
@@ -1102,6 +1103,13 @@
               "added": true
             },
             {
+              "id": "i-stone-of-agony",
+              "cat": "item",
+              "added": true,
+              "conf": "high",
+              "label": "Stone of Agony — the House of Skulltula reward at 20 Gold Skulltula tokens (called the Shard of Agony in the 3DS version); it chimes / rumbles when you're near a hidden grotto or secret."
+            },
+            {
               "id": "hp11",
               "cat": "hearts",
               "label": "HP #11 — Climb down the side of the wall in the Death Mountain Crater to find a small cubby in the wall with a heart piece. Atop Death Mountain – With those items in hand, swerve around the bird for now and lay a Bomb against the funny loo.",
@@ -1181,6 +1189,13 @@
               "label": "Bomb Bag upgrade (40, biggest) — The Bomb Bag prize in the Bombchu Bowling cycle (30 to 40, the biggest) — keep playing until it comes up.",
               "conf": "high",
               "added": true
+            },
+            {
+              "id": "up-deku-nut-1",
+              "cat": "upgrade",
+              "added": true,
+              "conf": "high",
+              "label": "Deku Nut capacity #1 — in the Lost Woods, bomb the boulder in the last area before the Sacred Forest Meadow, then buy it from the first Business Scrub in the grotto for 40 Rupees."
             },
             {
               "id": "hp13",
