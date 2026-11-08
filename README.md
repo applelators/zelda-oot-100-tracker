@@ -66,6 +66,14 @@ The original N64 completion set, all itemized and metered:
 3. **Missables audit** — every time/order/child-gated pickup pulled from the
    walkthrough and flagged in place, with a `meta.missablesSummary` quick-reference.
 
+4. **v0.5.0 enrichment** — every key item (Kokiri Sword, Deku Shield, songs,
+   medallions, bottles, upgrades…) now carries **how to obtain it**, and each area
+   shows a dashed **“Also in this area”** box listing the Gold Skulltulas / Heart
+   Pieces located there that you return for in **later sections** (future-return
+   cross-references). Both are flagged as additions in the UI — items get a `new`
+   pill + left border, area boxes get a dashed periwinkle border — so it's clear
+   what wasn't in the original tracker. 86 items enriched, 16 area notes.
+
 Source of truth: zeldadungeon.net/ocarina-of-time-walkthrough.
 
 ## Run it

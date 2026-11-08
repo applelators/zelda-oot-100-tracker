@@ -2,7 +2,7 @@
   "meta": {
     "game": "The Legend of Zelda: Ocarina of Time (N64 100% definition)",
     "subtitle": "Switch 2 remake — midnight-launch one-sitting 100% binge route",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "scope": "Structured to mirror the Zelda Dungeon walkthrough exactly — same 14 chapters and numbered sections, same path. 36 Heart Pieces, 100 Gold Skulltulas (both in Zelda Dungeon's collection-order numbering), 12 songs, all equipment/items/upgrades, 4 bottles, 6 Great Fairies, 3 Spiritual Stones, 6 Medallions, every dungeon.",
     "confidencePolicy": "Chapters, sections, path order, collectible placement and ALL missable/time-sensitive callouts are taken from the Zelda Dungeon walkthrough. Follow top to bottom and use the ⚠ missable notes. Trust the in-game counters over any wording.",
     "remakeNote": "Built pre-release on the original N64 baseline. Patch in remake-specific changes on launch night.",
@@ -20,7 +20,8 @@
     "confidenceLegend": {
       "high": "From the Zelda Dungeon walkthrough.",
       "verify": "Minor detail to confirm in-game."
-    }
+    },
+    "enrichmentNote": "v0.5.0 additions (marked NEW in the UI): every key item now carries HOW to obtain it, and each area shows the Gold Skulltulas / Heart Pieces located there that you return for in later sections. All grounded in the Zelda Dungeon walkthrough."
   },
   "categories": {
     "hearts": {
@@ -94,16 +95,31 @@
             {
               "id": "kokiri-sword",
               "cat": "equip",
-              "label": "Kokiri Sword",
-              "conf": "high"
+              "label": "Kokiri Sword — In the Forest Training Center (fenced path left of the shop), crawl through the hole and follow the trail, dodging the rolling boulder, to the chest at the end.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "deku-shield",
               "cat": "equip",
-              "label": "Deku Shield",
-              "conf": "high"
+              "label": "Deku Shield — Buy it from the Kokiri Shop for 40 Rupees (cut the grass and smash pots around the village to afford it). Equip it before talking to Mido.",
+              "conf": "high",
+              "added": true
             }
-          ]
+          ],
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Kokiri Forest",
+                "items": [
+                  "GS #17 → §3.6 Lost Woods  (night)",
+                  "GS #20 → §3.6 Lost Woods",
+                  "GS #47 → §7.4 Return to the Forest  (night · Hookshot)"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-1.3",
@@ -114,8 +130,9 @@
             {
               "id": "fairy-slingshot",
               "cat": "item",
-              "label": "Fairy Slingshot",
-              "conf": "high"
+              "label": "Fairy Slingshot — The Deku Tree's dungeon item — climb the vines in the basement and open the chest in the room with the Deku Scrub.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs1",
@@ -146,14 +163,16 @@
             {
               "id": "d-deku",
               "cat": "dungeon",
-              "label": "Inside the Deku Tree (cleared)",
-              "conf": "high"
+              "label": "Inside the Deku Tree (cleared) — Defeat Queen Gohma: stun her eye with the Slingshot (or a Deku Nut) when it glows red, then strike with your sword. Grab the Heart Container she leaves.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "kokiri-s-emerald",
               "cat": "sacred",
-              "label": "Kokiri's Emerald",
-              "conf": "high"
+              "label": "Kokiri's Emerald — The Great Deku Tree awards it after you defeat Queen Gohma — he shares his tale, then passes on.",
+              "conf": "high",
+              "added": true
             }
           ]
         }
@@ -189,10 +208,27 @@
             {
               "id": "up-bullet-bag-1",
               "cat": "upgrade",
-              "label": "Bullet Bag upgrade (Slingshot ammo 30→40)",
-              "conf": "high"
+              "label": "Bullet Bag upgrade (Slingshot ammo 30→40) — Get a perfect score at the Castle Town Shooting Gallery (child) to raise Slingshot ammo from 30 to 40.",
+              "conf": "high",
+              "added": true
             }
-          ]
+          ],
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Hyrule Castle/Market",
+                "items": [
+                  "GS #5 → §2.3 Hyrule Castle",
+                  "HP #9 → §3.7 Collection Wrap-Up  (night)",
+                  "HP #13 → §4.4 Fun With Bombs  (bomb)",
+                  "GS #46 → §7.3 Hookshot Goodies",
+                  "GS #78 → §11.2 Return to Childhood",
+                  "HP #33 → §11.4 Lens of Truth Goodies  (night)"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-2.3",
@@ -209,14 +245,16 @@
             {
               "id": "song-lullaby",
               "cat": "song",
-              "label": "Zelda's Lullaby",
-              "conf": "high"
+              "label": "Zelda's Lullaby — Impa teaches it in the Castle courtyard right after you meet Princess Zelda.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "tr-letter",
               "cat": "trade",
-              "label": "Weird Egg → Cucco → Zelda's Letter (trade chain begun)",
-              "conf": "high"
+              "label": "Weird Egg → Cucco → Zelda's Letter (trade chain begun) — From Zelda in the courtyard: the Weird Egg hatches overnight into a Cucco (use it to wake Talon), and Zelda's Letter kicks off the Happy Mask trade chain.",
+              "conf": "high",
+              "added": true
             }
           ]
         }
@@ -237,14 +275,16 @@
             {
               "id": "song-sun",
               "cat": "song",
-              "label": "Sun's Song",
-              "conf": "high"
+              "label": "Sun's Song — Pull back the Composer Brothers' grave in the Graveyard (behind the Royal Family's Tomb) and read the stone inside. Toggles day/night on command.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hylian-shield",
               "cat": "equip",
-              "label": "Hylian Shield",
-              "conf": "high"
+              "label": "Hylian Shield — Pull back the grave in the back row of the Graveyard to drop into a chest room holding a free Hylian Shield (needed for Dodongo's Cavern). Also buyable at the Market for ~50 Rupees.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp1",
@@ -260,7 +300,22 @@
             }
           ],
           "missable": true,
-          "missableNote": "HP #1 (Sun's-Song ReDead grave) and HP #2 (Dampé's gravedigging) both need NIGHT — Dampé only digs 18:00–21:00 and the Heart Piece is a ~10% random drop per dig, so keep paying/digging until it appears. Play Sun's Song to force night."
+          "missableNote": "HP #1 (Sun's-Song ReDead grave) and HP #2 (Dampé's gravedigging) both need NIGHT — Dampé only digs 18:00–21:00 and the Heart Piece is a ~10% random drop per dig, so keep paying/digging until it appears. Play Sun's Song to force night.",
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Graveyard",
+                "items": [
+                  "GS #6 → §3.2 Kakariko Village",
+                  "GS #43 → §5.5 Fun With The Boomerang  (night · Boomerang)",
+                  "HP #18 → §7.2 Getting the Hookshot  (child · bean)",
+                  "HP #19 → §7.2 Getting the Hookshot  (Hookshot)",
+                  "HP #20 → §7.3 Hookshot Goodies  (Hookshot)"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-3.2",
@@ -271,14 +326,16 @@
             {
               "id": "bot-cucco",
               "cat": "bottle",
-              "label": "Bottle #1 (Cucco Lady)",
-              "conf": "high"
+              "label": "Bottle #1 (Cucco Lady) — Round up the 7 escaped Cuccos into the pen for the Cucco Lady in Kakariko (toss them over the fence first); she hands over an Empty Bottle.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "up-adult-wallet",
               "cat": "upgrade",
-              "label": "Adult's Wallet (10 GS reward)",
-              "conf": "high"
+              "label": "Adult's Wallet (10 GS reward) — Reward from the cursed family in Kakariko's House of Skulltula once you've collected 10 Gold Skulltula tokens.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs6",
@@ -318,7 +375,21 @@
             }
           ],
           "missable": true,
-          "missableNote": "GS #7–11 only appear at NIGHT — play Sun's Song first. GS #6 needs a bottle of bugs dropped on the grave-side soft soil."
+          "missableNote": "GS #7–11 only appear at NIGHT — play Sun's Song first. GS #6 needs a bottle of bugs dropped on the grave-side soft soil.",
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Kakariko Village",
+                "items": [
+                  "GS #42 → §5.5 Fun With The Boomerang",
+                  "HP #21 → §7.3 Hookshot Goodies  (Hookshot)",
+                  "GS #45 → §7.3 Hookshot Goodies  (Hookshot)",
+                  "HP #22 → §7.6 Post-Temple Goodies"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-3.3",
@@ -329,14 +400,16 @@
             {
               "id": "song-epona",
               "cat": "song",
-              "label": "Epona's Song",
-              "conf": "high"
+              "label": "Epona's Song — Malon teaches it at Lon Lon Ranch — talk to her by the corral with the Fairy Ocarina equipped.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "bot-lonlon",
               "cat": "bottle",
-              "label": "Bottle #2 (Lon Lon Milk)",
-              "conf": "high"
+              "label": "Bottle #2 (Lon Lon Milk) — Wake Talon at Lon Lon Ranch (daytime) and win his Super Cucco game — spot the 3 special Cuccos within the time limit; the Bottle arrives full of Lon Lon Milk.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp3",
@@ -358,7 +431,20 @@
             }
           ],
           "missable": true,
-          "missableNote": "GS #13 is night-only (on the corral fence)."
+          "missableNote": "GS #13 is night-only (on the corral fence).",
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Lon Lon Ranch",
+                "items": [
+                  "GS #37 → §5.5 Fun With The Boomerang  (night · Boomerang)",
+                  "GS #38 → §5.5 Fun With The Boomerang  (night)",
+                  "HP #25 → §8.1 Lake Hylia  (bomb)"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-3.4",
@@ -384,7 +470,20 @@
               "label": "GS #14 — At the bottom of Gerudo Valley you will find a Gerudo, a Cow, and a soft soil location. Drop some bugs into the soil location to get the Skulltula.",
               "conf": "high"
             }
-          ]
+          ],
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Gerudo Valley",
+                "items": [
+                  "GS #39 → §5.5 Fun With The Boomerang",
+                  "GS #40 → §5.5 Fun With The Boomerang",
+                  "GS #88 → §13.1 Rescuing the Carpenters  (night)"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-3.5",
@@ -412,7 +511,22 @@
             }
           ],
           "missable": true,
-          "missableNote": "SET UP THE SCARECROW'S SONG AS A CHILD: sing any 8-note tune to Bonooru the scarecrow at Lake Hylia now. As an adult you replay it to summon Pierre — it's required/handy for HP #23, GS #61, GS #77 and other out-of-reach spots. GS #16 is night-only."
+          "missableNote": "SET UP THE SCARECROW'S SONG AS A CHILD: sing any 8-note tune to Bonooru the scarecrow at Lake Hylia now. As an adult you replay it to summon Pierre — it's required/handy for HP #23, GS #61, GS #77 and other out-of-reach spots. GS #16 is night-only.",
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Lake Hylia",
+                "items": [
+                  "HP #14 → §4.4 Fun With Bombs  (bomb)",
+                  "GS #41 → §5.5 Fun With The Boomerang  (night)",
+                  "HP #23 → §8.1 Lake Hylia  (bean · Hookshot)",
+                  "HP #24 → §8.1 Lake Hylia",
+                  "GS #71 → §10.1 Enter the Water Temple  (Iron Boots)"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-3.5b",
@@ -432,8 +546,9 @@
             {
               "id": "song-saria",
               "cat": "song",
-              "label": "Saria's Song",
-              "conf": "high"
+              "label": "Saria's Song — Saria teaches it deep in the Sacred Forest Meadow — navigate the Lost Woods, then the Meadow's maze past the Wolfos and Mad Scrubs.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp7",
@@ -474,18 +589,32 @@
             {
               "id": "up-deku-stick-1",
               "cat": "upgrade",
-              "label": "Deku Stick capacity #1",
-              "conf": "high"
+              "label": "Deku Stick capacity #1 — Buy it from the Business Scrub in the Lost Woods — reflect its Deku Nut back to beat it, then purchase the Deku Stick capacity upgrade.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "up-bullet-bag-2",
               "cat": "upgrade",
-              "label": "Bullet Bag upgrade #2 (40→50)",
-              "conf": "high"
+              "label": "Bullet Bag upgrade #2 (40→50) — In the Lost Woods, hit the target repeatedly (100 pts each) until a Deku Scrub appears and gifts a Bullet Bag upgrade (40 to 50).",
+              "conf": "high",
+              "added": true
             }
           ],
           "missable": true,
-          "missableNote": "GS #17 (Kokiri Forest) is night-only."
+          "missableNote": "GS #17 (Kokiri Forest) is night-only.",
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Sacred Forest Meadow",
+                "items": [
+                  "GS #48 → §7.4 Return to the Forest  (night · bean)",
+                  "GS #49 → §7.4 Return to the Forest  (night · Hookshot)"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-3.7",
@@ -520,8 +649,9 @@
             {
               "id": "up-goron-bracelet",
               "cat": "upgrade",
-              "label": "Goron's Bracelet",
-              "conf": "high"
+              "label": "Goron's Bracelet — Play Saria's Song for Darunia in his chamber under Goron City; he gives the Goron's Bracelet so you can pluck Bomb Flowers.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp10",
@@ -535,7 +665,28 @@
               "label": "GS #21 — Just outside of Dodongo’s Cavern, drop some bugs into the Soft Soil location and a Skulltula will pop out.",
               "conf": "high"
             }
-          ]
+          ],
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Goron City",
+                "items": [
+                  "GS #26 → §4.3 Atop Death Mountain  (bomb)",
+                  "GS #56 → §8.2 Death Mountain Revisited"
+                ]
+              },
+              {
+                "area": "Death Mountain Trail",
+                "items": [
+                  "HP #12 → §4.3 Atop Death Mountain",
+                  "GS #25 → §4.3 Atop Death Mountain  (bomb)",
+                  "GS #63 → §8.5 Fun with the Hammer  (child · bomb)",
+                  "GS #64 → §8.5 Fun with the Hammer"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-4.2",
@@ -546,8 +697,9 @@
             {
               "id": "bomb-bag",
               "cat": "item",
-              "label": "Bomb Bag",
-              "conf": "high"
+              "label": "Bomb Bag — Found in a chest inside Dodongo's Cavern (past the first Lizalfos) — lets you carry and buy Bombs.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs22",
@@ -567,7 +719,20 @@
               "label": "GS #24 — In the room with the Fire Keese towards the end of the dungeon there is a bombable wall at the north end of the room. Blast it open and you’ll find a Gold Skulltula behind the armos statue.",
               "conf": "high"
             }
-          ]
+          ],
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Dodongo's Cavern",
+                "items": [
+                  "GS #44 → §5.5 Fun With The Boomerang",
+                  "HP #26 → §8.2 Death Mountain Revisited  (child · bean)",
+                  "GS #55 → §8.2 Death Mountain Revisited"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-4.3",
@@ -578,26 +743,30 @@
             {
               "id": "d-dodongo",
               "cat": "dungeon",
-              "label": "Dodongo's Cavern (cleared)",
-              "conf": "high"
+              "label": "Dodongo's Cavern (cleared) — Defeat King Dodongo: drop a Bomb in his mouth as he inhales, then slash him (roll over his curled body to finish). Grab the Heart Container.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "goron-s-ruby",
               "cat": "sacred",
-              "label": "Goron's Ruby",
-              "conf": "high"
+              "label": "Goron's Ruby — Darunia awards the Goron's Ruby (Spiritual Stone of Fire) after you clear Dodongo's Cavern.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "fairy-magic",
               "cat": "fairy",
-              "label": "Great Fairy — Magic Meter",
-              "conf": "high"
+              "label": "Great Fairy — Magic Meter — Great Fairy of Power — bomb the cracked wall near the Death Mountain summit and play Zelda's Lullaby at the fountain; she grants the Magic Meter.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "up-bomb-bag-2",
               "cat": "upgrade",
-              "label": "Bomb Bag upgrade (30)",
-              "conf": "high"
+              "label": "Bomb Bag upgrade (30) — Stop the Hot Rodder Goron rolling around Goron City (Bomb him), then talk to him for a bigger Bomb Bag (20 to 30).",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp11",
@@ -629,7 +798,19 @@
               "label": "GS #27 — At the very top of Death Mountain, enter the Death Mountain Crater and you’ll find a wooden crate. Roll into it to find a Gold Skulltula.",
               "conf": "high"
             }
-          ]
+          ],
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Death Mountain Crater",
+                "items": [
+                  "HP #27 → §8.3 Death Mountain Crater  (bean)",
+                  "GS #57 → §8.3 Death Mountain Crater  (child)"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-4.4",
@@ -640,20 +821,23 @@
             {
               "id": "bombchus",
               "cat": "item",
-              "label": "Bombchus",
-              "conf": "high"
+              "label": "Bombchus — A prize in the Bombchu Bowling cycle at the Castle Town alley (also sold there).",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "fairy-din",
               "cat": "fairy",
-              "label": "Great Fairy — Din's Fire",
-              "conf": "high"
+              "label": "Great Fairy — Din's Fire — Great Fairy of Magic in the Hyrule Castle courtyard grotto (bomb the wall, play Zelda's Lullaby) — grants Din's Fire. Requires having met the Death Mountain Great Fairy first.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "up-bomb-bag-3",
               "cat": "upgrade",
-              "label": "Bomb Bag upgrade (40, biggest)",
-              "conf": "high"
+              "label": "Bomb Bag upgrade (40, biggest) — The Bomb Bag prize in the Bombchu Bowling cycle (30 to 40, the biggest) — keep playing until it comes up.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp13",
@@ -688,8 +872,9 @@
             {
               "id": "i-magic-beans",
               "cat": "item",
-              "label": "Magic Beans (buy the full set)",
-              "conf": "high"
+              "label": "Magic Beans (buy the full set) — Buy EVERY Magic Bean from the Bean Salesman on Zora's River (price climbs each time) and plant one at each soft-soil patch now — only sold here, only as a child.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp15",
@@ -717,7 +902,21 @@
             }
           ],
           "missable": true,
-          "missableNote": "BUY ALL THE MAGIC BEANS — this salesman is the ONLY source, and beans planted now (as a child) grow into platforms you need as an adult for several Heart Pieces/Skulltulas. (The bean-salesman's own soft-soil patch is the one and only soft soil in the game with NO Gold Skulltula — don't waste bugs there.) GS #29 is night-only."
+          "missableNote": "BUY ALL THE MAGIC BEANS — this salesman is the ONLY source, and beans planted now (as a child) grow into platforms you need as an adult for several Heart Pieces/Skulltulas. (The bean-salesman's own soft-soil patch is the one and only soft soil in the game with NO Gold Skulltula — don't waste bugs there.) GS #29 is night-only.",
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Zora's River",
+                "items": [
+                  "GS #65 → §9.1 Zora's Domain Revisited  (bean)",
+                  "GS #66 → §9.1 Zora's Domain Revisited",
+                  "HP #31 → §11.2 Return to Childhood  (child)",
+                  "HP #32 → §11.2 Return to Childhood  (child)"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-5.2",
@@ -728,14 +927,16 @@
             {
               "id": "silver-scale",
               "cat": "upgrade",
-              "label": "Silver Scale",
-              "conf": "high"
+              "label": "Silver Scale — Win King Zora's diving game in Zora's Domain — collect all the rupees off the ledge within the time limit.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "bot-ruto",
               "cat": "bottle",
-              "label": "Bottle #3 (Ruto's Letter)",
-              "conf": "high"
+              "label": "Bottle #3 (Ruto's Letter) — Find the bottle containing Ruto's Letter washed up at Lake Hylia; show it to King Zora (he moves aside to open Zora's Fountain) and the Bottle is then yours, empty.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp17",
@@ -749,7 +950,25 @@
               "label": "GS #30 — At the southeast portion of Zora’s Fountain, roll into the lone tree here and the Skulltula will pop out. If you look against the wall here you’ll find two boulders.",
               "conf": "high"
             }
-          ]
+          ],
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Zora's Domain",
+                "items": [
+                  "GS #67 → §9.1 Zora's Domain Revisited"
+                ]
+              },
+              {
+                "area": "Zora's Fountain",
+                "items": [
+                  "HP #30 → §9.3 Zora Tunic  (Iron Boots)",
+                  "GS #100 → §14.2 The Last Skulltula  (night · Silver Gauntlets)"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-5.3",
@@ -760,8 +979,9 @@
             {
               "id": "boomerang",
               "cat": "item",
-              "label": "Boomerang",
-              "conf": "high"
+              "label": "Boomerang — Jabu-Jabu's dungeon item — the chest in the room you reach after first carrying Princess Ruto.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs31",
@@ -798,20 +1018,23 @@
             {
               "id": "d-jabu",
               "cat": "dungeon",
-              "label": "Inside Jabu-Jabu's Belly (cleared)",
-              "conf": "high"
+              "label": "Inside Jabu-Jabu's Belly (cleared) — Defeat Barinade: stun the jellyfish core with the Boomerang, then slash it. Grab the Heart Container.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "zora-s-sapphire",
               "cat": "sacred",
-              "label": "Zora's Sapphire",
-              "conf": "high"
+              "label": "Zora's Sapphire — Princess Ruto personally gives you Zora's Sapphire (Spiritual Stone of Water) after Barinade falls.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "fairy-farore",
               "cat": "fairy",
-              "label": "Great Fairy — Farore's Wind",
-              "conf": "high"
+              "label": "Great Fairy — Farore's Wind — Great Fairy of Magic at Zora's Fountain — bomb the wall near Jabu-Jabu and play Zelda's Lullaby; she grants Farore's Wind.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs35",
@@ -830,8 +1053,9 @@
             {
               "id": "up-giant-wallet",
               "cat": "upgrade",
-              "label": "Giant's Wallet (30 GS reward)",
-              "conf": "high"
+              "label": "Giant's Wallet (30 GS reward) — Reward from Kakariko's House of Skulltula once you've collected 30 Gold Skulltula tokens.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs36",
@@ -908,14 +1132,16 @@
             {
               "id": "song-time",
               "cat": "song",
-              "label": "Song of Time",
-              "conf": "high"
+              "label": "Song of Time — Zelda teaches it telepathically; play it at the Door of Time altar (with all 3 Spiritual Stones placed) to open the way to the Master Sword.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "i-ocarina-time",
               "cat": "item",
-              "label": "Ocarina of Time",
-              "conf": "high"
+              "label": "Ocarina of Time — Zelda throws the Ocarina of Time to you across the castle moat as she flees Ganondorf with Impa.",
+              "conf": "high",
+              "added": true
             }
           ]
         },
@@ -928,20 +1154,23 @@
             {
               "id": "tr-mask",
               "cat": "trade",
-              "label": "Happy Mask sequence → Mask of Truth",
-              "conf": "high"
+              "label": "Happy Mask sequence → Mask of Truth — Borrow masks from the Happy Mask Shop and sell each in order (Keaton, Spooky, Skull, Bunny Hood), then pay for and keep the Mask of Truth.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "up-deku-stick-2",
               "cat": "upgrade",
-              "label": "Deku Stick capacity #2",
-              "conf": "high"
+              "label": "Deku Stick capacity #2 — Wear the Skull Mask at the Deku Theater (Lost Woods Forest Stage) and show it to the Deku audience.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "up-deku-nut-2",
               "cat": "upgrade",
-              "label": "Deku Nut capacity #2",
-              "conf": "high"
+              "label": "Deku Nut capacity #2 — Wear the Mask of Truth at the Deku Theater (Forest Stage) for the Deku audience.",
+              "conf": "high",
+              "added": true
             }
           ],
           "missable": true,
@@ -956,14 +1185,16 @@
             {
               "id": "master-sword",
               "cat": "equip",
-              "label": "Master Sword",
-              "conf": "high"
+              "label": "Master Sword — Pull the Master Sword from the Pedestal of Time (after opening the Door of Time) — it sends you 7 years ahead to adult Link.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "light-medallion",
               "cat": "sacred",
-              "label": "Light Medallion",
-              "conf": "high"
+              "label": "Light Medallion — Rauru, Sage of Light, awards it in the Chamber of Sages the moment you first awaken as an adult.",
+              "conf": "high",
+              "added": true
             }
           ]
         }
@@ -991,8 +1222,9 @@
             {
               "id": "hookshot",
               "cat": "item",
-              "label": "Hookshot",
-              "conf": "high"
+              "label": "Hookshot — Win Dampe's grave race in the Kakariko Graveyard — follow his ghost through the tomb and open the chest before he vanishes.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp18",
@@ -1051,8 +1283,9 @@
             {
               "id": "song-minuet",
               "cat": "song",
-              "label": "Minuet of Forest",
-              "conf": "high"
+              "label": "Minuet of Forest — Sheik teaches it at the entrance to the Sacred Forest Meadow.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs47",
@@ -1085,8 +1318,9 @@
             {
               "id": "fairy-bow",
               "cat": "item",
-              "label": "Fairy Bow",
-              "conf": "high"
+              "label": "Fairy Bow — The Forest Temple's dungeon item — the chest reached after the first elevator and wall-climb.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs50",
@@ -1129,26 +1363,30 @@
             {
               "id": "d-forest",
               "cat": "dungeon",
-              "label": "Forest Temple (cleared)",
-              "conf": "high"
+              "label": "Forest Temple (cleared) — Defeat Phantom Ganon: knock his energy orb back and forth until it hits him, then arrow the real galloping portrait.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "md-forest",
               "cat": "sacred",
-              "label": "Forest Medallion",
-              "conf": "high"
+              "label": "Forest Medallion — Saria, Sage of Forest, awards the Forest Medallion after Phantom Ganon falls.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "song-prelude",
               "cat": "song",
-              "label": "Prelude of Light",
-              "conf": "high"
+              "label": "Prelude of Light — Sheik teaches the Prelude of Light back at the Temple of Time after you clear the Forest Temple.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "up-quiver-2",
               "cat": "upgrade",
-              "label": "Quiver upgrade (Big, 40)",
-              "conf": "high"
+              "label": "Quiver upgrade (Big, 40) — Get a perfect score at the adult Kakariko Village Shooting Gallery for the Big Quiver (30 to 40 arrows).",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp22",
@@ -1167,8 +1405,9 @@
             {
               "id": "bot-bigpoe",
               "cat": "bottle",
-              "label": "Bottle #4 (Big Poe)",
-              "conf": "high"
+              "label": "Bottle #4 (Big Poe) — Ride Epona across Hyrule Field at night, shoot Big Poes with the Bow, bottle one, and sell it to the Ghost Shop (Mystery Man) in the Market for the Bottle.",
+              "conf": "high",
+              "added": true
             }
           ]
         }
@@ -1189,8 +1428,9 @@
             {
               "id": "golden-scale",
               "cat": "upgrade",
-              "label": "Golden Scale",
-              "conf": "high"
+              "label": "Golden Scale — At the Lake Hylia Fishing Pond (adult), catch a fish of 13 lbs or more and show it to the owner.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp23",
@@ -1223,8 +1463,9 @@
             {
               "id": "goron-tunic",
               "cat": "equip",
-              "label": "Goron Tunic",
-              "conf": "high"
+              "label": "Goron Tunic — Talk to 'Link' the Goron (Darunia's son) in Goron City; after you hear both of his tales he awards the heat-proof Goron Tunic (also buyable in the Goron Shop).",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp26",
@@ -1257,8 +1498,9 @@
             {
               "id": "song-bolero",
               "cat": "song",
-              "label": "Bolero of Fire",
-              "conf": "high"
+              "label": "Bolero of Fire — Sheik teaches the Bolero of Fire on the broken bridge over the Death Mountain Crater (wear the Goron Tunic for the heat).",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp27",
@@ -1285,8 +1527,9 @@
             {
               "id": "megaton-hammer",
               "cat": "item",
-              "label": "Megaton Hammer",
-              "conf": "high"
+              "label": "Megaton Hammer — The Fire Temple's dungeon item — race across the fire/boulder floor of the maze room to the chest.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs58",
@@ -1331,20 +1574,23 @@
             {
               "id": "d-fire",
               "cat": "dungeon",
-              "label": "Fire Temple (cleared)",
-              "conf": "high"
+              "label": "Fire Temple (cleared) — Defeat Volvagia: smash the dragon with the Megaton Hammer as it surfaces from the holes, then strike.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "md-fire",
               "cat": "sacred",
-              "label": "Fire Medallion",
-              "conf": "high"
+              "label": "Fire Medallion — Darunia, Sage of Fire, awards the Fire Medallion after Volvagia falls.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "fairy-magic2",
               "cat": "fairy",
-              "label": "Great Fairy — Double Magic",
-              "conf": "high"
+              "label": "Great Fairy — Double Magic — Great Fairy of Wisdom — bomb the wall on the Death Mountain summit and play Zelda's Lullaby; she doubles your Magic Meter.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs63",
@@ -1400,7 +1646,21 @@
               "label": "GS #67 — Found inside of Zora’s Domain, there is a Skulltula near the top of the frozen waterfall. Go through King Zora’s Chamber and walk right up to the edge.",
               "conf": "high"
             }
-          ]
+          ],
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Ice Cavern",
+                "items": [
+                  "HP #29 → §9.2 Ice Cavern",
+                  "GS #68 → §9.2 Ice Cavern",
+                  "GS #69 → §9.2 Ice Cavern  (Hookshot)",
+                  "GS #70 → §9.2 Ice Cavern"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-9.2",
@@ -1411,20 +1671,23 @@
             {
               "id": "iron-boots",
               "cat": "equip",
-              "label": "Iron Boots",
-              "conf": "high"
+              "label": "Iron Boots — The chest that appears after you beat the White Wolfos mini-boss in the Ice Cavern.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "song-serenade",
               "cat": "song",
-              "label": "Serenade of Water",
-              "conf": "high"
+              "label": "Serenade of Water — Sheik teaches the Serenade of Water just outside the Ice Cavern once you have the Iron Boots.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "d-ice",
               "cat": "dungeon",
-              "label": "Ice Cavern (cleared)",
-              "conf": "high"
+              "label": "Ice Cavern (cleared) — A boss-less mini-dungeon off Zora's Fountain; clearing it yields the Iron Boots, HP #29 and (from Sheik) the Serenade of Water.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp29",
@@ -1461,8 +1724,9 @@
             {
               "id": "zora-tunic",
               "cat": "equip",
-              "label": "Zora Tunic",
-              "conf": "high"
+              "label": "Zora Tunic — Melt the frozen King Zora with a bottle of Blue Fire (scooped in the Ice Cavern); he rewards the water-breathing Zora Tunic (also sold in the Zora Shop).",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp30",
@@ -1481,14 +1745,16 @@
             {
               "id": "biggoron-s-sword",
               "cat": "equip",
-              "label": "Biggoron's Sword",
-              "conf": "high"
+              "label": "Biggoron's Sword — Finish the timed adult trade chain (Pocket Egg to Claim Check), hand the Claim Check to Biggoron on Death Mountain, then return to collect the unbreakable sword.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "tr-biggoron",
               "cat": "trade",
-              "label": "Biggoron trade chain complete",
-              "conf": "high"
+              "label": "Biggoron trade chain complete — The full adult trade: Pocket Egg, Cojiro, Odd Mushroom, Odd Potion, Poacher's Saw, Broken Goron's Sword, Prescription, Eyeball Frog, World's Finest Eye Drops, Claim Check.",
+              "conf": "high",
+              "added": true
             }
           ],
           "missable": true,
@@ -1525,20 +1791,23 @@
             {
               "id": "longshot",
               "cat": "item",
-              "label": "Longshot",
-              "conf": "high"
+              "label": "Longshot — The Water Temple's dungeon item — the chest in the upper-west room by Dark Link's arena; doubles the Hookshot's reach.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "d-water",
               "cat": "dungeon",
-              "label": "Water Temple (cleared)",
-              "conf": "high"
+              "label": "Water Temple (cleared) — Defeat Morpha: Longshot its nucleus out of the water and slash it before it re-submerges.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "md-water",
               "cat": "sacred",
-              "label": "Water Medallion",
-              "conf": "high"
+              "label": "Water Medallion — Ruto, Sage of Water, awards the Water Medallion after Morpha falls.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs72",
@@ -1581,8 +1850,9 @@
             {
               "id": "fire-arrows",
               "cat": "item",
-              "label": "Fire Arrows",
-              "conf": "high"
+              "label": "Fire Arrows — Stand on the small island at Lake Hylia at sunrise and shoot an arrow into the rising sun; they appear on the island.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs77",
@@ -1611,14 +1881,16 @@
             {
               "id": "song-nocturne",
               "cat": "song",
-              "label": "Nocturne of Shadow",
-              "conf": "high"
+              "label": "Nocturne of Shadow — Sheik teaches the Nocturne of Shadow in burning Kakariko (by the Graveyard) right after you clear the Water Temple.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "song-storms",
               "cat": "song",
-              "label": "Song of Storms",
-              "conf": "high"
+              "label": "Song of Storms — Learn it from Guru-Guru, the windmill man in Kakariko (as an adult, he's ranting about the well).",
+              "conf": "high",
+              "added": true
             }
           ]
         },
@@ -1659,14 +1931,16 @@
             {
               "id": "lens-of-truth",
               "cat": "item",
-              "label": "Lens of Truth",
-              "conf": "high"
+              "label": "Lens of Truth — The reward for clearing the Bottom of the Well (child-only) — reveals invisible things; required for the Shadow Temple.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "d-botw",
               "cat": "dungeon",
-              "label": "Bottom of the Well (cleared)",
-              "conf": "high"
+              "label": "Bottom of the Well (cleared) — A child-only mini-dungeon under Kakariko — drain it by playing Song of Storms in the windmill; holds the Lens of Truth.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs79",
@@ -1730,8 +2004,9 @@
             {
               "id": "hover-boots",
               "cat": "equip",
-              "label": "Hover Boots",
-              "conf": "high"
+              "label": "Hover Boots — The Shadow Temple's dungeon item (chest past the second Dead Hand) — hover briefly across gaps.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs82",
@@ -1774,14 +2049,16 @@
             {
               "id": "d-shadow",
               "cat": "dungeon",
-              "label": "Shadow Temple (cleared)",
-              "conf": "high"
+              "label": "Shadow Temple (cleared) — Defeat Bongo Bongo: stun its hands with arrows (use the Lens), then strike the eye when it charges.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "md-shadow",
               "cat": "sacred",
-              "label": "Shadow Medallion",
-              "conf": "high"
+              "label": "Shadow Medallion — Impa, Sage of Shadow, awards the Shadow Medallion after Bongo Bongo falls.",
+              "conf": "high",
+              "added": true
             }
           ]
         }
@@ -1802,8 +2079,9 @@
             {
               "id": "i-gerudo-card",
               "cat": "item",
-              "label": "Gerudo Membership Card",
-              "conf": "high"
+              "label": "Gerudo Membership Card — Free all four captured carpenters from the Gerudo Fortress jails; the fortress leader then gives the Membership Card (opens the Training Ground and Wasteland).",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs87",
@@ -1817,7 +2095,21 @@
               "label": "GS #88 — In Gerudo Valley, once you cross the bridge, there is an archway just to the left. Look up on one of the sides at nighttime to find the Skulltula.",
               "conf": "high"
             }
-          ]
+          ],
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Gerudo Fortress",
+                "items": [
+                  "HP #34 → §13.2 Gerudo Goodies  (Longshot)",
+                  "HP #35 → §13.2 Gerudo Goodies",
+                  "GS #89 → §13.2 Gerudo Goodies  (night)",
+                  "GS #90 → §13.2 Gerudo Goodies  (night)"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-13.2",
@@ -1828,8 +2120,9 @@
             {
               "id": "up-quiver-3",
               "cat": "upgrade",
-              "label": "Quiver upgrade (Biggest, 50)",
-              "conf": "high"
+              "label": "Quiver upgrade (Biggest, 50) — Score 1500+ in the Gerudo Horseback Archery game (on Epona) for the Biggest Quiver (40 to 50 arrows).",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp34",
@@ -1868,14 +2161,16 @@
             {
               "id": "song-requiem",
               "cat": "song",
-              "label": "Requiem of Spirit",
-              "conf": "high"
+              "label": "Requiem of Spirit — Sheik teaches the Requiem of Spirit at the Desert Colossus after you cross the Haunted Wasteland (it then warps you here).",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "fairy-nayru",
               "cat": "fairy",
-              "label": "Great Fairy — Nayru's Love",
-              "conf": "high"
+              "label": "Great Fairy — Nayru's Love — Great Fairy of Magic — bomb the wall at the Desert Colossus fountain and play Zelda's Lullaby; she grants Nayru's Love (a protective shield).",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "hp36",
@@ -1909,7 +2204,27 @@
             }
           ],
           "missable": true,
-          "missableNote": "PLANT A MAGIC BEAN at the Desert Colossus (needed to ride to HP #36 and GS #93). GS #92 is a CHILD soft-soil drop outside the temple; #93/#94 are night-only (bean ride / palm tree)."
+          "missableNote": "PLANT A MAGIC BEAN at the Desert Colossus (needed to ride to HP #36 and GS #93). GS #92 is a CHILD soft-soil drop outside the temple; #93/#94 are night-only (bean ride / palm tree).",
+          "areaNote": {
+            "added": true,
+            "groups": [
+              {
+                "area": "Spirit Temple",
+                "items": [
+                  "GS #95 → §13.4 Spirit Temple (Child)  (child · Boomerang)",
+                  "GS #96 → §13.4 Spirit Temple (Child)  (child · bomb)",
+                  "GS #97 → §13.4 Spirit Temple (Child)  (child)",
+                  "GS #98 → §13.5 Spirit Temple (Adult)  (adult)"
+                ]
+              },
+              {
+                "area": "Desert Colossus",
+                "items": [
+                  "GS #99 → §13.5 Spirit Temple (Adult)  (Scarecrow's Song)"
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "s-13.4",
@@ -1920,8 +2235,9 @@
             {
               "id": "up-silver-gauntlets",
               "cat": "upgrade",
-              "label": "Silver Gauntlets",
-              "conf": "high"
+              "label": "Silver Gauntlets — The chest at the end of the CHILD half of the Spirit Temple — lets you push the heavy silver blocks.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs95",
@@ -1954,8 +2270,9 @@
             {
               "id": "mirror-shield",
               "cat": "equip",
-              "label": "Mirror Shield",
-              "conf": "high"
+              "label": "Mirror Shield — Found in the ADULT half of the Spirit Temple — reflects light and beams.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "gs98",
@@ -1980,14 +2297,16 @@
             {
               "id": "d-spirit",
               "cat": "dungeon",
-              "label": "Spirit Temple (cleared)",
-              "conf": "high"
+              "label": "Spirit Temple (cleared) — Defeat Twinrova: catch each witch's fire or ice with the Mirror Shield until it's charged, then fire it back; finish them with your sword.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "md-spirit",
               "cat": "sacred",
-              "label": "Spirit Medallion",
-              "conf": "high"
+              "label": "Spirit Medallion — Nabooru, Sage of Spirit, awards the Spirit Medallion after Twinrova falls.",
+              "conf": "high",
+              "added": true
             }
           ]
         }
@@ -2008,8 +2327,9 @@
             {
               "id": "light-arrows",
               "cat": "item",
-              "label": "Light Arrows",
-              "conf": "high"
+              "label": "Light Arrows — Princess Zelda gives them to you at the Temple of Time, just before Ganondorf captures her.",
+              "conf": "high",
+              "added": true
             }
           ]
         },
@@ -2038,8 +2358,9 @@
             {
               "id": "ice-arrows",
               "cat": "item",
-              "label": "Ice Arrows",
-              "conf": "high"
+              "label": "Ice Arrows — The final chest at the end of the Gerudo Training Ground gauntlet (optional).",
+              "conf": "high",
+              "added": true
             }
           ]
         },
@@ -2052,20 +2373,23 @@
             {
               "id": "up-golden-gauntlets",
               "cat": "upgrade",
-              "label": "Golden Gauntlets",
-              "conf": "high"
+              "label": "Golden Gauntlets — A chest inside Ganon's Castle, reached via the Shadow trial (Longshot across) — lets you lift the heaviest pillars.",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "fairy-defense",
               "cat": "fairy",
-              "label": "Great Fairy — Double Defense",
-              "conf": "high"
+              "label": "Great Fairy — Double Defense — Great Fairy of Courage in the fountain by Ganon's Castle moat (play Zelda's Lullaby) — grants Double Defense (halves damage taken).",
+              "conf": "high",
+              "added": true
             },
             {
               "id": "d-ganon",
               "cat": "dungeon",
-              "label": "Ganon's Castle (cleared)",
-              "conf": "high"
+              "label": "Ganon's Castle (cleared) — Clear the six elemental trials (Light Arrows needed), climb the tower, beat Ganondorf, then Ganon. Game complete at 100%.",
+              "conf": "high",
+              "added": true
             }
           ],
           "missable": true,

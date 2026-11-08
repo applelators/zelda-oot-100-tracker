@@ -184,10 +184,31 @@
         </span>
       </li>`;
     }
-    return `<li class="item ${done ? "checked" : ""}" data-search="${esc((it.label + " " + it.id).toLowerCase())}">
+    const newPill = it.added ? `<span class="new-pill" title="Detail added in v0.5.0 — not in the original tracker">new</span>` : "";
+    return `<li class="item ${done ? "checked" : ""} ${it.added ? "added" : ""}" data-search="${esc((it.label + " " + it.id).toLowerCase())}">
       <label><input type="checkbox" data-id="${esc(it.id)}" ${done ? "checked" : ""}/>
-      <span class="txt">${esc(it.label)} ${verify}</span></label>${pill}
+      <span class="txt">${esc(it.label)} ${verify} ${newPill}</span></label>${pill}
     </li>`;
+  }
+
+  // per-area "future returns" cross-reference (added in v0.5.0)
+  function areaNoteBlock(note) {
+    if (!note || !note.groups || !note.groups.length) return "";
+    const groups = note.groups.map((g) => `
+      <div class="an-group">
+        <div class="an-area">${esc(g.area)}</div>
+        <ul>${g.items.map((s) => {
+          const m = s.match(/^(.*?)(\s*\([^)]*\))?$/);
+          const main = m ? m[1] : s;
+          const tag = m && m[2] ? `<span class="an-tag">${esc(m[2])}</span>` : "";
+          return `<li>${esc(main)} ${tag}</li>`;
+        }).join("")}</ul>
+      </div>`).join("");
+    return `<div class="area-note">
+      <div class="an-head"><span class="new-pill">new</span> Also in this area
+        <span class="an-sub">— collectibles here you'll return for in later sections</span></div>
+      ${groups}
+    </div>`;
   }
 
   function stepBlock(step) {
@@ -200,6 +221,7 @@
       ${step.do ? `<div class="step-do">${esc(step.do)}</div>` : ""}
       ${missNote}
       <ul class="items">${items}</ul>
+      ${areaNoteBlock(step.areaNote)}
     </div>`;
   }
 
@@ -235,7 +257,7 @@
       ${renderFocus()}
       ${phases}
       <footer>
-        Built on the original N64 100% definition · items tagged <span class="verify">verify</span> are best-known specifics — trust the in-game Gold Skulltula count + a HP guide.<br/>
+        Mirrors the Zelda Dungeon walkthrough · items with a <span class="new-pill">new</span> pill and the dashed “Also in this area” boxes were added in v0.5.0 (how-to-get details + per-area future-return cross-refs) — not in the original tracker.<br/>
         Progress saved locally on this device. Export to back it up.
       </footer>`);
     applyFilters();
@@ -260,8 +282,10 @@
         if (hide && stepDone(st)) show = false;
         if (onlyMiss && !st.missable) show = false;
         if (q) {
+          const anTxt = st.areaNote && st.areaNote.groups
+            ? st.areaNote.groups.map((g) => g.area + " " + g.items.join(" ")).join(" ") : "";
           const hay = (st.title + " " + (st.loc || "") + " " + (st.do || "") + " " +
-            stepItems(st).map((i) => i.label).join(" ")).toLowerCase();
+            stepItems(st).map((i) => i.label).join(" ") + " " + anTxt).toLowerCase();
           if (!hay.includes(q)) show = false;
         }
         node.style.display = show ? "" : "none";
